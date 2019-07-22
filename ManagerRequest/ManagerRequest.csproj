@@ -52,19 +52,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClasificacionAsunto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClasificacionAsunto.Designer.cs">
+      <DependentUpon>FormClasificacionAsunto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNueva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNueva.Designer.cs">
+      <DependentUpon>FormNueva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipoTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoTransaccion.Designer.cs">
+      <DependentUpon>FormTipoTransaccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormClasificacionAsunto.resx">
+      <DependentUpon>FormClasificacionAsunto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNueva.resx">
+      <DependentUpon>FormNueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoTransaccion.resx">
+      <DependentUpon>FormTipoTransaccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

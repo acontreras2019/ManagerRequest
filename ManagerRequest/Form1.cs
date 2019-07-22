@@ -32,5 +32,26 @@ namespace ManagerRequest
         {
             Environment.Exit(0);
         }
+
+        private void NuevaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formNueva = new FormNueva();
+            formNueva.MdiParent = this;
+            formNueva.Show();
+        }
+
+        private void ClasificacionDeAsuntosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formClasificacionAsunto = new FormClasificacionAsunto();
+            formClasificacionAsunto.MdiParent = this;
+            formClasificacionAsunto.Show();
+        }
+
+        private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formTipoTransaccion = new FormTipoTransaccion();
+            formTipoTransaccion.MdiParent = this;
+            formTipoTransaccion.Show();
+        }
     }
 }

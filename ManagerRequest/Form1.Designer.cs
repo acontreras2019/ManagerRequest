@@ -30,7 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.transaccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificacionDeAsuntosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,17 +57,18 @@
             // transaccionToolStripMenuItem
             // 
             this.transaccionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaSolicitudToolStripMenuItem});
+            this.nuevaToolStripMenuItem});
             this.transaccionToolStripMenuItem.Name = "transaccionToolStripMenuItem";
             this.transaccionToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.transaccionToolStripMenuItem.Text = "Transacciones";
             this.transaccionToolStripMenuItem.Click += new System.EventHandler(this.TransaccionToolStripMenuItem_Click);
             // 
-            // nuevaSolicitudToolStripMenuItem
+            // nuevaToolStripMenuItem
             // 
-            this.nuevaSolicitudToolStripMenuItem.Name = "nuevaSolicitudToolStripMenuItem";
-            this.nuevaSolicitudToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.nuevaSolicitudToolStripMenuItem.Text = "Nueva";
+            this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
+            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaToolStripMenuItem.Text = "Nueva";
+            this.nuevaToolStripMenuItem.Click += new System.EventHandler(this.NuevaToolStripMenuItem_Click);
             // 
             // matenimientoToolStripMenuItem
             // 
@@ -82,13 +83,15 @@
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.usuariosToolStripMenuItem.Text = "Tipos de Transacciones";
+            this.usuariosToolStripMenuItem.Text = "Tipos de Documento";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
             // 
             // clasificacionDeAsuntosToolStripMenuItem
             // 
             this.clasificacionDeAsuntosToolStripMenuItem.Name = "clasificacionDeAsuntosToolStripMenuItem";
             this.clasificacionDeAsuntosToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.clasificacionDeAsuntosToolStripMenuItem.Text = "Clasificacion de Asuntos";
+            this.clasificacionDeAsuntosToolStripMenuItem.Click += new System.EventHandler(this.ClasificacionDeAsuntosToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -127,7 +130,8 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Manager Request";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -141,7 +145,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem transaccionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaSolicitudToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clasificacionDeAsuntosToolStripMenuItem;
