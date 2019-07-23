@@ -38,9 +38,7 @@ namespace ManagerRequest
                     var form = new Form1();
                     form.Show();
                 }
-                else
-
-                MessageBox.Show("Usuario o Contraseña Incorrecta");
+                MessageBox.Show("usuario o contraseña incorrecta");
             }
 
         }

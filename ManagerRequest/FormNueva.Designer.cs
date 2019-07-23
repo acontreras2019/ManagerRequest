@@ -250,7 +250,7 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "Recolección Regular",
             "Limpieza Vertedero Clandestino",
-            "Actividad de Apoyo",
+            "Acticidad de Apoyo",
             "Limpieza de Parques, Plazas o Calles",
             "Chapea y Poda",
             "Otro"});
@@ -437,7 +437,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormNueva";
-            this.Text = "Nueva";
+            this.Text = "FormNueva";
             this.Load += new System.EventHandler(this.FormNueva_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
