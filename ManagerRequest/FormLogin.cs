@@ -38,7 +38,10 @@ namespace ManagerRequest
                     var form = new Form1();
                     form.Show();
                 }
-                MessageBox.Show("usuario o contraseña incorrecta");
+                else{
+                    MessageBox.Show("usuario o contraseña incorrecta");
+                }
+                
             }
 
         }
@@ -46,6 +49,11 @@ namespace ManagerRequest
         private void Button2_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

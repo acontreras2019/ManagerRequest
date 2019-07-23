@@ -70,11 +70,11 @@
     <Compile Include="FormNueva.Designer.cs">
       <DependentUpon>FormNueva.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTipoTransaccion.cs">
+    <Compile Include="Mantenieminto Tipo de Transaccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTipoTransaccion.Designer.cs">
-      <DependentUpon>FormTipoTransaccion.cs</DependentUpon>
+    <Compile Include="Mantenieminto Tipo de Transaccion.Designer.cs">
+      <DependentUpon>Mantenieminto Tipo de Transaccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,8 +90,8 @@
     <EmbeddedResource Include="FormNueva.resx">
       <DependentUpon>FormNueva.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTipoTransaccion.resx">
-      <DependentUpon>FormTipoTransaccion.cs</DependentUpon>
+    <EmbeddedResource Include="Mantenieminto Tipo de Transaccion.resx">
+      <DependentUpon>Mantenieminto Tipo de Transaccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

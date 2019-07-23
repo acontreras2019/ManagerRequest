@@ -152,7 +152,7 @@
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label11);
             this.Name = "FormClasificacionAsunto";
-            this.Text = "FormClasificacionAsunto";
+            this.Text = "Manteniemiento Clasificacion de Asunto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

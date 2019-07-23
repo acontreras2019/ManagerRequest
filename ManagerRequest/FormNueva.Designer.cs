@@ -437,7 +437,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormNueva";
-            this.Text = "FormNueva";
+            this.Text = "Nueva Solicitud";
             this.Load += new System.EventHandler(this.FormNueva_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
