@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29006.145
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerRequest", "ManagerRequest\ManagerRequest.csproj", "{A7566A86-597F-45D2-A18F-A530C37937FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Denuncias.BL", "Denuncias.BL\Denuncias.BL.csproj", "{95813540-EBA1-4393-9A08-02BB20CC03B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A7566A86-597F-45D2-A18F-A530C37937FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7566A86-597F-45D2-A18F-A530C37937FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7566A86-597F-45D2-A18F-A530C37937FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
