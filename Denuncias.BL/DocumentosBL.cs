@@ -13,17 +13,15 @@ namespace Denuncias.BL
 
         }
 
-        public class Documento
-        {
-            public int Id { get; set; }
-            public string Descripcion { get; set; }
-            public string  Usuariocreador { get; set; }
-            public string Compania { get; set; }
-            public bool Activo { get; set; }
-        }
-
-
-
-
     }
+
+    public class Documento
+    {
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
+        public string Usuariocreador { get; set; }
+        public string Compania { get; set; }
+        public bool Activo { get; set; }
+    }
+
 }
