@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
             System.Windows.Forms.Label activoLabel;
             System.Windows.Forms.Label companyIdLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label usuarioIdCreadorLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
             this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAsuntosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -49,12 +49,12 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaAsuntosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.companyIdTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.usuarioIdCreadorTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             activoLabel = new System.Windows.Forms.Label();
             companyIdLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -64,6 +64,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).BeginInit();
             this.listaAsuntosBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(77, 209);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.TabIndex = 1;
+            activoLabel.Text = "Activo:";
+            // 
+            // companyIdLabel
+            // 
+            companyIdLabel.AutoSize = true;
+            companyIdLabel.Location = new System.Drawing.Point(77, 82);
+            companyIdLabel.Name = "companyIdLabel";
+            companyIdLabel.Size = new System.Drawing.Size(66, 13);
+            companyIdLabel.TabIndex = 3;
+            companyIdLabel.Text = "Company Id:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(77, 124);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 5;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(77, 49);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 7;
+            idLabel.Text = "Id:";
+            // 
+            // usuarioIdCreadorLabel
+            // 
+            usuarioIdCreadorLabel.AutoSize = true;
+            usuarioIdCreadorLabel.Location = new System.Drawing.Point(77, 169);
+            usuarioIdCreadorLabel.Name = "usuarioIdCreadorLabel";
+            usuarioIdCreadorLabel.Size = new System.Drawing.Size(98, 13);
+            usuarioIdCreadorLabel.TabIndex = 9;
+            usuarioIdCreadorLabel.Text = "Usuario Id Creador:";
             // 
             // listaAsuntosBindingSource
             // 
@@ -100,6 +145,13 @@
             this.listaAsuntosBindingNavigator.TabIndex = 0;
             this.listaAsuntosBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -132,16 +184,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -164,7 +209,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -195,14 +240,15 @@
             this.listaAsuntosBindingNavigatorSaveItem.Text = "Save Data";
             this.listaAsuntosBindingNavigatorSaveItem.Click += new System.EventHandler(this.ListaAsuntosBindingNavigatorSaveItem_Click);
             // 
-            // activoLabel
+            // toolStripButtonCancelar
             // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(77, 209);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 1;
-            activoLabel.Text = "Activo:";
+            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Visible = false;
             // 
             // activoCheckBox
             // 
@@ -214,15 +260,6 @@
             this.activoCheckBox.Text = "checkBox1";
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // companyIdLabel
-            // 
-            companyIdLabel.AutoSize = true;
-            companyIdLabel.Location = new System.Drawing.Point(77, 82);
-            companyIdLabel.Name = "companyIdLabel";
-            companyIdLabel.Size = new System.Drawing.Size(66, 13);
-            companyIdLabel.TabIndex = 3;
-            companyIdLabel.Text = "Company Id:";
-            // 
             // companyIdTextBox
             // 
             this.companyIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "CompanyId", true));
@@ -230,15 +267,6 @@
             this.companyIdTextBox.Name = "companyIdTextBox";
             this.companyIdTextBox.Size = new System.Drawing.Size(199, 20);
             this.companyIdTextBox.TabIndex = 4;
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(77, 124);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 5;
-            descripcionLabel.Text = "Descripcion:";
             // 
             // descripcionTextBox
             // 
@@ -248,15 +276,6 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(199, 20);
             this.descripcionTextBox.TabIndex = 6;
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(77, 49);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 7;
-            idLabel.Text = "Id:";
-            // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Id", true));
@@ -265,15 +284,6 @@
             this.idTextBox.Size = new System.Drawing.Size(199, 20);
             this.idTextBox.TabIndex = 8;
             // 
-            // usuarioIdCreadorLabel
-            // 
-            usuarioIdCreadorLabel.AutoSize = true;
-            usuarioIdCreadorLabel.Location = new System.Drawing.Point(77, 169);
-            usuarioIdCreadorLabel.Name = "usuarioIdCreadorLabel";
-            usuarioIdCreadorLabel.Size = new System.Drawing.Size(98, 13);
-            usuarioIdCreadorLabel.TabIndex = 9;
-            usuarioIdCreadorLabel.Text = "Usuario Id Creador:";
-            // 
             // usuarioIdCreadorTextBox
             // 
             this.usuarioIdCreadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "UsuarioIdCreador", true));
@@ -281,16 +291,6 @@
             this.usuarioIdCreadorTextBox.Name = "usuarioIdCreadorTextBox";
             this.usuarioIdCreadorTextBox.Size = new System.Drawing.Size(199, 20);
             this.usuarioIdCreadorTextBox.TabIndex = 10;
-            // 
-            // toolStripButtonCancelar
-            // 
-            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
-            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
-            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButtonCancelar.Text = "Cancelar";
-            this.toolStripButtonCancelar.Visible = false;
             // 
             // FormClasificacionAsunto
             // 
@@ -308,6 +308,7 @@
             this.Controls.Add(usuarioIdCreadorLabel);
             this.Controls.Add(this.usuarioIdCreadorTextBox);
             this.Controls.Add(this.listaAsuntosBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClasificacionAsunto";
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).EndInit();
