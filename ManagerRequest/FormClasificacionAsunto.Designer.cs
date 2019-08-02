@@ -35,7 +35,6 @@
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label usuarioIdCreadorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
-            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAsuntosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,14 +54,15 @@
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.usuarioIdCreadorTextBox = new System.Windows.Forms.TextBox();
+            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             activoLabel = new System.Windows.Forms.Label();
             companyIdLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             usuarioIdCreadorLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).BeginInit();
             this.listaAsuntosBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -109,10 +109,6 @@
             usuarioIdCreadorLabel.Size = new System.Drawing.Size(98, 13);
             usuarioIdCreadorLabel.TabIndex = 9;
             usuarioIdCreadorLabel.Text = "Usuario Id Creador:";
-            // 
-            // listaAsuntosBindingSource
-            // 
-            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
             // 
             // listaAsuntosBindingNavigator
             // 
@@ -230,6 +226,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listaAsuntosBindingNavigatorSaveItem
             // 
@@ -249,6 +246,7 @@
             this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
             // 
             // activoCheckBox
             // 
@@ -257,7 +255,6 @@
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 2;
-            this.activoCheckBox.Text = "checkBox1";
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // companyIdTextBox
@@ -281,6 +278,7 @@
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Id", true));
             this.idTextBox.Location = new System.Drawing.Point(181, 46);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(199, 20);
             this.idTextBox.TabIndex = 8;
             // 
@@ -291,6 +289,10 @@
             this.usuarioIdCreadorTextBox.Name = "usuarioIdCreadorTextBox";
             this.usuarioIdCreadorTextBox.Size = new System.Drawing.Size(199, 20);
             this.usuarioIdCreadorTextBox.TabIndex = 10;
+            // 
+            // listaAsuntosBindingSource
+            // 
+            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
             // 
             // FormClasificacionAsunto
             // 
@@ -310,10 +312,10 @@
             this.Controls.Add(this.listaAsuntosBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClasificacionAsunto";
-            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).EndInit();
             this.listaAsuntosBindingNavigator.ResumeLayout(false);
             this.listaAsuntosBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

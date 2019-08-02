@@ -61,6 +61,21 @@ namespace Denuncias.BL
             var nuevoAsunto = new Asunto();
             ListaAsuntos.Add(nuevoAsunto);
         }
+
+        public bool EliminarAsunto(int id)
+        {
+            foreach (var asunto in ListaAsuntos)
+            {
+                if (asunto.Id == id)
+                {
+                    ListaAsuntos.Remove(asunto);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 
     public class Asunto

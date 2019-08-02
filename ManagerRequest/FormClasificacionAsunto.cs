@@ -30,6 +30,7 @@ namespace ManagerRequest
             if(resultado==true){
 
                 listaAsuntosBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
 
             }
             else{
@@ -42,6 +43,51 @@ namespace ManagerRequest
         {
             _asuntos.AgregarAsunto();
             listaAsuntosBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
+        }
+
+        private void DeshabilitarHabilitarBotones(bool valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = valor;
+            bindingNavigatorMoveLastItem.Enabled = valor;
+            bindingNavigatorMovePreviousItem.Enabled = valor;
+            bindingNavigatorMoveNextItem.Enabled = valor;
+            bindingNavigatorPositionItem.Enabled = valor;
+
+            bindingNavigatorAddNewItem.Enabled = valor;
+            bindingNavigatorDeleteItem.Enabled = valor;
+            toolStripButtonCancelar.Visible = !valor;
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.Text != "")
+            {
+                var id = Convert.ToInt32(idTextBox.Text);
+                Eliminar(id);
+            }
+        }
+
+        private void Eliminar(int id)
+        {
+            
+            var resultado = _asuntos.EliminarAsunto(id);
+
+            if (resultado == true)
+            {
+                listaAsuntosBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un Error al Eliminar el Asunto");
+            }
+        }
+
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
+        {
+            DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
         }
     }
 }
