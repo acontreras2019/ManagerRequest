@@ -49,12 +49,20 @@ namespace Denuncias.BL
             return ListaAsuntos;
         }
        
-        public bool GuardarAsunto(Asunto asunto){
+        public string GuardarAsunto(Asunto asunto){
 
-            if (asunto.Id == 0){
-                asunto.Id = ListaAsuntos.Max(item => item.Id) + 1;
+            var vd = validarDatos(asunto);
+            if(vd=="OK"){
+                if (asunto.Id == 0){
+                    asunto.Id = ListaAsuntos.Max(item => item.Id) + 1;
+                }
+                return asunto.Id.ToString();
             }
-            return true;
+            else
+            {
+                return vd;
+            }
+
         }
 
         public void AgregarAsunto(){
@@ -75,6 +83,26 @@ namespace Denuncias.BL
             }
 
             return false;
+        }
+
+        private string validarDatos( Asunto a)
+        {
+            var validacion = "";
+            if(!((a.CompanyId)>0)){
+                validacion = "Error en Compania";
+            }
+
+            if (String.IsNullOrEmpty(a.Descripcion)){
+                validacion = validacion + " -- " + "Error en Descripcion";
+            }
+            if (!((a.UsuarioIdCreador)>0)) {
+                validacion = validacion + " -- " + "Error en Usuario";
+            }
+
+            if(validacion.Length==0){
+               validacion = "OK";
+            }
+            return validacion;
         }
     }
 

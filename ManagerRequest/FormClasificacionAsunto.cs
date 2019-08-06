@@ -26,15 +26,16 @@ namespace ManagerRequest
             listaAsuntosBindingSource.EndEdit();
             var asunto = (Asunto)listaAsuntosBindingSource.Current;
             var resultado = _asuntos.GuardarAsunto(asunto);
-
-            if(resultado==true){
+            int ii =0;
+            if(int.TryParse(resultado, out ii)){
 
                 listaAsuntosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                 MessageBox.Show("Guardado Correctamenta: " + resultado);
 
             }
             else{
-                MessageBox.Show("Ocurrio un error al guardar el asunto");
+                MessageBox.Show("Ocurrio un error al guardar el asunto: " + resultado);
             }
 
         }
@@ -72,16 +73,24 @@ namespace ManagerRequest
         private void Eliminar(int id)
         {
             
-            var resultado = _asuntos.EliminarAsunto(id);
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;  
+            DialogResult accion = MessageBox.Show("Esta seguro que desea ELIMINAR este registro?", "Manager Request", buttons);
+             
+             //"Esta seguro que desea ELIMINAR este registro?"
+             if(accion.ToString() =="Cancel"){
+                return;
+             }
+                var resultado = _asuntos.EliminarAsunto(id);
 
-            if (resultado == true)
-            {
-                listaAsuntosBindingSource.ResetBindings(false);
-            }
-            else
-            {
-                MessageBox.Show("Ocurrio un Error al Eliminar el Asunto");
-            }
+                if (resultado == true)
+                {
+                    listaAsuntosBindingSource.ResetBindings(false);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un Error al Eliminar el Asunto");
+                }
+           
         }
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
