@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,43 +10,18 @@ namespace Denuncias.BL
 {
     public class AsuntosBL
     {
+        Contexto _contexto; //Declarar variable contexto
         public BindingList<Asunto> ListaAsuntos { get; set; }
         public AsuntosBL()
         {
+            _contexto = new Contexto(); //Instanciarla 
             ListaAsuntos = new BindingList<Asunto>();
-            var Asunto1 = new Asunto();
-            Asunto1.Id = 1;
-            Asunto1.CompanyId = 1;
-            Asunto1.Descripcion = "Recoleccion Regular";
-            Asunto1.UsuarioIdCreador = 1;
-            Asunto1.Activo = true;
-            
-
-            var Asunto2 = new Asunto();
-            Asunto2.Id = 2;
-            Asunto2.CompanyId = 1;
-            Asunto2.Descripcion = "Limpieza Vertedero Clandestino";
-            Asunto2.UsuarioIdCreador = 1;
-            Asunto2.Activo = true;
-      
-
-            var Asunto3 = new Asunto();
-            Asunto3.Id = 3;
-            Asunto3.CompanyId = 1;
-            Asunto3.Descripcion = "Actividad de Apoyo";
-            Asunto3.UsuarioIdCreador = 1;
-            Asunto3.Activo = true;
-            
-
-            ListaAsuntos.Add(Asunto1);
-            ListaAsuntos.Add(Asunto2);
-            ListaAsuntos.Add(Asunto3);
-
-
+           
         }
 
         public BindingList<Asunto> ObtenerAsuntos(){
-
+            _contexto.Asuntos.Load(); // cargar los asuntos
+            ListaAsuntos = _contexto.Asuntos.Local.ToBindingList(); //llenar lista
             return ListaAsuntos;
         }
        
