@@ -10,18 +10,20 @@ namespace Denuncias.BL
 {
     public class AsuntosBL
     {
-        Contexto _contexto; //Declarar variable contexto
+        Contexto _contexto;
         public BindingList<Asunto> ListaAsuntos { get; set; }
         public AsuntosBL()
         {
-            _contexto = new Contexto(); //Instanciarla 
+            _contexto = new Contexto(); 
             ListaAsuntos = new BindingList<Asunto>();
            
         }
 
-        public BindingList<Asunto> ObtenerAsuntos(){
-            _contexto.Asuntos.Load(); // cargar los asuntos
-            ListaAsuntos = _contexto.Asuntos.Local.ToBindingList(); //llenar lista
+        public BindingList<Asunto> ObtenerAsuntos()
+        {
+
+            _contexto.Asuntos.Load();
+            ListaAsuntos = _contexto.Asuntos.Local.ToBindingList();
             return ListaAsuntos;
         }
        
@@ -29,9 +31,10 @@ namespace Denuncias.BL
 
             var vd = validarDatos(asunto);
             if(vd=="OK"){
-                if (asunto.Id == 0){
-                    asunto.Id = ListaAsuntos.Max(item => item.Id) + 1;
-                }
+
+                _contexto.SaveChanges();
+
+
                 return asunto.Id.ToString();
             }
             else
@@ -53,7 +56,7 @@ namespace Denuncias.BL
                 if (asunto.Id == id)
                 {
                     ListaAsuntos.Remove(asunto);
-
+                    _contexto.SaveChanges();
                     return true;
                 }
             }

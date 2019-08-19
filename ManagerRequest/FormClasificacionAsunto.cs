@@ -31,7 +31,7 @@ namespace ManagerRequest
 
                 listaAsuntosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
-                 MessageBox.Show("Guardado Correctamenta: " + resultado);
+                 MessageBox.Show("Guardado Correctamente: " + resultado);
 
             }
             else{
