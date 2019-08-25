@@ -35,12 +35,20 @@
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label usuarioIdCreadorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
-            this.listaAsuntosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.companyIdTextBox = new System.Windows.Forms.TextBox();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.usuarioIdCreadorTextBox = new System.Windows.Forms.TextBox();
+            this.fotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -49,20 +57,17 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaAsuntosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.companyIdTextBox = new System.Windows.Forms.TextBox();
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.usuarioIdCreadorTextBox = new System.Windows.Forms.TextBox();
-            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaAsuntosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             activoLabel = new System.Windows.Forms.Label();
             companyIdLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             usuarioIdCreadorLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).BeginInit();
             this.listaAsuntosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -110,43 +115,82 @@
             usuarioIdCreadorLabel.TabIndex = 9;
             usuarioIdCreadorLabel.Text = "Usuario Id Creador:";
             // 
-            // listaAsuntosBindingNavigator
+            // listaAsuntosBindingSource
             // 
-            this.listaAsuntosBindingNavigator.AddNewItem = null;
-            this.listaAsuntosBindingNavigator.BindingSource = this.listaAsuntosBindingSource;
-            this.listaAsuntosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaAsuntosBindingNavigator.DeleteItem = null;
-            this.listaAsuntosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.listaAsuntosBindingNavigatorSaveItem,
-            this.toolStripButtonCancelar});
-            this.listaAsuntosBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.listaAsuntosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.listaAsuntosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.listaAsuntosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.listaAsuntosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.listaAsuntosBindingNavigator.Name = "listaAsuntosBindingNavigator";
-            this.listaAsuntosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaAsuntosBindingNavigator.Size = new System.Drawing.Size(481, 25);
-            this.listaAsuntosBindingNavigator.TabIndex = 0;
-            this.listaAsuntosBindingNavigator.Text = "bindingNavigator1";
+            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
             // 
-            // bindingNavigatorCountItem
+            // activoCheckBox
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaAsuntosBindingSource, "Activo", true));
+            this.activoCheckBox.Location = new System.Drawing.Point(181, 204);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.TabIndex = 2;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // companyIdTextBox
+            // 
+            this.companyIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "CompanyId", true));
+            this.companyIdTextBox.Location = new System.Drawing.Point(181, 79);
+            this.companyIdTextBox.Name = "companyIdTextBox";
+            this.companyIdTextBox.Size = new System.Drawing.Size(199, 20);
+            this.companyIdTextBox.TabIndex = 4;
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Descripcion", true));
+            this.descripcionTextBox.Location = new System.Drawing.Point(181, 121);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(199, 20);
+            this.descripcionTextBox.TabIndex = 6;
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(181, 46);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(199, 20);
+            this.idTextBox.TabIndex = 8;
+            // 
+            // usuarioIdCreadorTextBox
+            // 
+            this.usuarioIdCreadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "UsuarioIdCreador", true));
+            this.usuarioIdCreadorTextBox.Location = new System.Drawing.Point(181, 166);
+            this.usuarioIdCreadorTextBox.Name = "usuarioIdCreadorTextBox";
+            this.usuarioIdCreadorTextBox.Size = new System.Drawing.Size(199, 20);
+            this.usuarioIdCreadorTextBox.TabIndex = 10;
+            // 
+            // fotoPictureBox
+            // 
+            this.fotoPictureBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaAsuntosBindingSource, "foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.fotoPictureBox.Location = new System.Drawing.Point(421, 46);
+            this.fotoPictureBox.Name = "fotoPictureBox";
+            this.fotoPictureBox.Size = new System.Drawing.Size(145, 140);
+            this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPictureBox.TabIndex = 12;
+            this.fotoPictureBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(421, 193);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Agregar Foto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(421, 222);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Remover Foto";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -179,6 +223,13 @@
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
@@ -248,57 +299,49 @@
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
             // 
-            // activoCheckBox
+            // listaAsuntosBindingNavigator
             // 
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaAsuntosBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(181, 204);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.activoCheckBox.TabIndex = 2;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
+            this.listaAsuntosBindingNavigator.AddNewItem = null;
+            this.listaAsuntosBindingNavigator.BindingSource = this.listaAsuntosBindingSource;
+            this.listaAsuntosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.listaAsuntosBindingNavigator.DeleteItem = null;
+            this.listaAsuntosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.listaAsuntosBindingNavigatorSaveItem,
+            this.toolStripButtonCancelar});
+            this.listaAsuntosBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.listaAsuntosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.listaAsuntosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.listaAsuntosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.listaAsuntosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.listaAsuntosBindingNavigator.Name = "listaAsuntosBindingNavigator";
+            this.listaAsuntosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.listaAsuntosBindingNavigator.Size = new System.Drawing.Size(578, 25);
+            this.listaAsuntosBindingNavigator.TabIndex = 0;
+            this.listaAsuntosBindingNavigator.Text = "bindingNavigator1";
             // 
-            // companyIdTextBox
+            // openFileDialog1
             // 
-            this.companyIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "CompanyId", true));
-            this.companyIdTextBox.Location = new System.Drawing.Point(181, 79);
-            this.companyIdTextBox.Name = "companyIdTextBox";
-            this.companyIdTextBox.Size = new System.Drawing.Size(199, 20);
-            this.companyIdTextBox.TabIndex = 4;
-            // 
-            // descripcionTextBox
-            // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(181, 121);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(199, 20);
-            this.descripcionTextBox.TabIndex = 6;
-            // 
-            // idTextBox
-            // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(181, 46);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(199, 20);
-            this.idTextBox.TabIndex = 8;
-            // 
-            // usuarioIdCreadorTextBox
-            // 
-            this.usuarioIdCreadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "UsuarioIdCreador", true));
-            this.usuarioIdCreadorTextBox.Location = new System.Drawing.Point(181, 166);
-            this.usuarioIdCreadorTextBox.Name = "usuarioIdCreadorTextBox";
-            this.usuarioIdCreadorTextBox.Size = new System.Drawing.Size(199, 20);
-            this.usuarioIdCreadorTextBox.TabIndex = 10;
-            // 
-            // listaAsuntosBindingSource
-            // 
-            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FormClasificacionAsunto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 271);
+            this.ClientSize = new System.Drawing.Size(578, 271);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fotoPictureBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(companyIdLabel);
@@ -312,10 +355,11 @@
             this.Controls.Add(this.listaAsuntosBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClasificacionAsunto";
+            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).EndInit();
             this.listaAsuntosBindingNavigator.ResumeLayout(false);
             this.listaAsuntosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,24 +372,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.BindingSource listaAsuntosBindingSource;
-        private System.Windows.Forms.BindingNavigator listaAsuntosBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton listaAsuntosBindingNavigatorSaveItem;
         private System.Windows.Forms.CheckBox activoCheckBox;
         private System.Windows.Forms.TextBox companyIdTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox usuarioIdCreadorTextBox;
+        private System.Windows.Forms.PictureBox fotoPictureBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton listaAsuntosBindingNavigatorSaveItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
+        private System.Windows.Forms.BindingNavigator listaAsuntosBindingNavigator;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
