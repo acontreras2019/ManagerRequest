@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,27 +95,10 @@ namespace ManagerRequest
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-            DeshabilitarHabilitarBotones(true);
-            Eliminar(0);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-            var archivo = openFileDialog1.FileName;
-            if (archivo != "")
-            {
-                var fileinfo = new FileInfo(archivo);
-                var filestring = fileinfo.OpenRead();
-
-                fotoPictureBox.Image = Image.FromStream(filestring);
-
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            fotoPictureBox.Image = null;
-        }
+         DeshabilitarHabilitarBotones(true);
+         Eliminar(0);
+       }
     }
 }
+
+

@@ -91,7 +91,6 @@ namespace Denuncias.BL
         public int CompanyId { get; set; }
         public string Descripcion { get; set; }
         public int UsuarioIdCreador { get; set; } //Quien resuelve el asunto
-        public byte[] foto { get; set; }
         public bool Activo { get; set; }
         
 
