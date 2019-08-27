@@ -18,8 +18,10 @@ namespace Denuncias.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());// 
         }
 
         public DbSet<Asunto> Asuntos { get; set; }
+        public DbSet<CreadoresAsunto> CreadoresAsunto { get; set; }
     }
 }

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="AsuntosBL.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="CreadoresAsuntoBL.cs" />
     <Compile Include="DocumentosBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
