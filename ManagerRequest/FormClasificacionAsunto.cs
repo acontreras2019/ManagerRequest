@@ -95,8 +95,10 @@ namespace ManagerRequest
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-            DeshabilitarHabilitarBotones(true);
-            Eliminar(0);
-        }
+         DeshabilitarHabilitarBotones(true);
+         Eliminar(0);
+       }
     }
 }
+
+
