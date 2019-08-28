@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsuntosBL.cs" />
+    <Compile Include="CompanyBL.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="DocumentosBL.cs" />
+    <Compile Include="DatosdeInicio.cs" />
+    <Compile Include="Dbset.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

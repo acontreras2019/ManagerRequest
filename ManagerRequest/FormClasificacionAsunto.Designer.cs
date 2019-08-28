@@ -36,6 +36,7 @@
             System.Windows.Forms.Label usuarioIdCreadorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
             this.listaAsuntosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -54,7 +55,8 @@
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.usuarioIdCreadorTextBox = new System.Windows.Forms.TextBox();
-            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
             companyIdLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -68,7 +70,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(77, 209);
+            activoLabel.Location = new System.Drawing.Point(77, 237);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 1;
@@ -86,7 +88,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(77, 124);
+            descripcionLabel.Location = new System.Drawing.Point(77, 152);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(66, 13);
             descripcionLabel.TabIndex = 5;
@@ -104,7 +106,7 @@
             // usuarioIdCreadorLabel
             // 
             usuarioIdCreadorLabel.AutoSize = true;
-            usuarioIdCreadorLabel.Location = new System.Drawing.Point(77, 169);
+            usuarioIdCreadorLabel.Location = new System.Drawing.Point(77, 197);
             usuarioIdCreadorLabel.Name = "usuarioIdCreadorLabel";
             usuarioIdCreadorLabel.Size = new System.Drawing.Size(98, 13);
             usuarioIdCreadorLabel.TabIndex = 9;
@@ -141,6 +143,10 @@
             this.listaAsuntosBindingNavigator.TabIndex = 0;
             this.listaAsuntosBindingNavigator.Text = "bindingNavigator1";
             // 
+            // listaAsuntosBindingSource
+            // 
+            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -175,6 +181,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -251,7 +258,7 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaAsuntosBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(181, 204);
+            this.activoCheckBox.Location = new System.Drawing.Point(181, 232);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 2;
@@ -268,7 +275,7 @@
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(181, 121);
+            this.descripcionTextBox.Location = new System.Drawing.Point(181, 149);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(199, 20);
             this.descripcionTextBox.TabIndex = 6;
@@ -285,20 +292,38 @@
             // usuarioIdCreadorTextBox
             // 
             this.usuarioIdCreadorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaAsuntosBindingSource, "UsuarioIdCreador", true));
-            this.usuarioIdCreadorTextBox.Location = new System.Drawing.Point(181, 166);
+            this.usuarioIdCreadorTextBox.Location = new System.Drawing.Point(181, 194);
             this.usuarioIdCreadorTextBox.Name = "usuarioIdCreadorTextBox";
             this.usuarioIdCreadorTextBox.Size = new System.Drawing.Size(199, 20);
             this.usuarioIdCreadorTextBox.TabIndex = 10;
             // 
-            // listaAsuntosBindingSource
+            // comboBox1
             // 
-            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Denuncia",
+            "Solicitud"});
+            this.comboBox1.Location = new System.Drawing.Point(181, 112);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(77, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Tipo";
             // 
             // FormClasificacionAsunto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 271);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(companyIdLabel);
@@ -347,5 +372,7 @@
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox usuarioIdCreadorTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
