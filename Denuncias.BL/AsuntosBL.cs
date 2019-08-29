@@ -22,8 +22,8 @@ namespace Denuncias.BL
         public BindingList<Asunto> ObtenerAsuntos()
         {
 
-            _contexto.Asuntos.Load();
-            ListaAsuntos = _contexto.Asuntos.Local.ToBindingList();
+            _contexto.Asunto.Load();
+            ListaAsuntos = _contexto.Asunto.Local.ToBindingList();
             return ListaAsuntos;
         }
        
@@ -74,9 +74,9 @@ namespace Denuncias.BL
             if (String.IsNullOrEmpty(a.Descripcion)){
                 validacion = validacion + " -- " + "Error en Descripcion";
             }
-            if (!((a.UsuarioIdCreador)>0)) {
-                validacion = validacion + " -- " + "Error en Usuario";
-            }
+            //if (!((a.UsuarioIdCreador)>0)) {
+            //    validacion = validacion + " -- " + "Error en Usuario";
+            //}
 
             if(validacion.Length==0){
                validacion = "OK";
@@ -89,8 +89,10 @@ namespace Denuncias.BL
     {
         public int Id { get; set; }
         public int CompanyId { get; set; }
+        public Company Company { get; set; }
         public string Descripcion { get; set; }
-        public int UsuarioIdCreador { get; set; } //Quien resuelve el asunto
+        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }/*/ *///Quien resuelve el asunto
         //public CreadoresAsunto DescripcionCreador { get; set; }
         public bool Activo { get; set; }
         

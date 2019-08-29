@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Denuncias.BL
 {
     public class Contexto: DbContext
     {
-        public Contexto(): base("Asuntos")
+        public Contexto(): base("Asuntos3")
         {
 
         }
@@ -18,10 +19,13 @@ namespace Denuncias.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            Database.SetInitializer(new DatosdeInicio());// 
+            Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD
+
         }
 
-        public DbSet<Asunto> Asuntos { get; set; }
-        public DbSet<CreadoresAsunto> CreadoresAsunto { get; set; }
+        public DbSet<Asunto> Asunto { get; set; }
+        public DbSet<Company> Company { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        //public object Asuntos1 { get; internal set; }
     }
 }

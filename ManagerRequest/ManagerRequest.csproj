@@ -114,6 +114,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Denuncias.BL.Asunto.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.AsuntosBL.datasource" />
+    <None Include="Properties\DataSources\Denuncias.BL.CompanyBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.Documento.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.DocumentosBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.SeguridadBL.datasource" />

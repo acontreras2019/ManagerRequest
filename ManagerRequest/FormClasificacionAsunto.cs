@@ -98,6 +98,21 @@ namespace ManagerRequest
          DeshabilitarHabilitarBotones(true);
          Eliminar(0);
        }
+
+        private void listaAsuntosBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaAsuntosBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void descripcionLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
