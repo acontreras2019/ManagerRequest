@@ -22,10 +22,11 @@ namespace ManagerRequest
             string usuario = textBox1.Text;
             string contraseña = textBox2.Text;
 
-          bool resultado = _seguridad.Autorizar(usuario, contraseña);
+          var usuarioDB = _seguridad.Autorizar(usuario, contraseña);
 
-            if (resultado == true)
+            if (usuarioDB != null)
             {
+                Program.usuario = usuarioDB;
                 this.Hide();
                 var form = new Form1();
                 form.Show();

@@ -11,7 +11,7 @@ namespace Denuncias.BL
 {
     public class Contexto: DbContext
     {
-        public Contexto(): base("Asuntos3")
+        public Contexto(): base("Asuntos4")
         {
 
         }
@@ -26,6 +26,6 @@ namespace Denuncias.BL
         public DbSet<Asunto> Asunto { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-        //public object Asuntos1 { get; internal set; }
+       
     }
 }

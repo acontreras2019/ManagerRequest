@@ -35,20 +35,22 @@ namespace Denuncias.BL
 
         }
 
-        public bool Autorizar(string usuario, string contraseña)
+        public Usuario Autorizar(string usuario, string contraseña)
         {
             var usuarios = _contexto.Usuario.ToList();
-            bool aut = false;
+            
             foreach (var usuarioDB in usuarios)
             {
                 if (usuario == usuarioDB.UsuarioNombre && contraseña == usuarioDB.Contrasena)
                 {
-                    aut = true;
-                    return aut;
+                    
+                   
+        
+                    return usuarioDB;
                 }
 
             }
-            return aut;
+            return null;
 
         }
         }

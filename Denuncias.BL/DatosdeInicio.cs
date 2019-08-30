@@ -14,7 +14,7 @@ namespace Denuncias.BL
             var usuarioAdmin = new Usuario();
             usuarioAdmin.UsuarioNombre = "admin";
             usuarioAdmin.Contrasena = "123";
-
+            
             contexto.Usuario.Add(usuarioAdmin);
 
             var company1 = new Company();

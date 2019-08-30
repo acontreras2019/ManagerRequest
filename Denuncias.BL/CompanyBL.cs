@@ -19,7 +19,7 @@ namespace Denuncias.BL
             _contexto = new Contexto();
             ListaCompany = new BindingList<Company>();
         }
-        public BindingList<Company> ObtenerCategorias()
+        public BindingList<Company> ObtenerCompanies()
         {
             _contexto.Company.Load();
             ListaCompany = _contexto.Company.Local.ToBindingList();

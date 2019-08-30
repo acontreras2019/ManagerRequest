@@ -14,17 +14,21 @@ namespace ManagerRequest
     public partial class FormClasificacionAsunto : Form
     {
         AsuntosBL _asuntos;
+        CompanyBL _company;
         public FormClasificacionAsunto()
         {
             InitializeComponent();
             _asuntos = new AsuntosBL();
+            _company = new CompanyBL();
             listaAsuntosBindingSource.DataSource = _asuntos.ObtenerAsuntos();
+            listaCompanyBindingSource.DataSource = _company.ObtenerCompanies();
         }
 
         private void ListaAsuntosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             listaAsuntosBindingSource.EndEdit();
             var asunto = (Asunto)listaAsuntosBindingSource.Current;
+            asunto.Usuario= Program.usuario;
             var resultado = _asuntos.GuardarAsunto(asunto);
             int ii =0;
             if(int.TryParse(resultado, out ii)){
@@ -110,6 +114,11 @@ namespace ManagerRequest
         }
 
         private void descripcionLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaCompanyBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

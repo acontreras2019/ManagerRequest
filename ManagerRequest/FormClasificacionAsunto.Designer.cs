@@ -32,10 +32,11 @@
             System.Windows.Forms.Label activoLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label idLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
             System.Windows.Forms.Label descripcionLabel1;
-            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.Windows.Forms.Label companyIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,18 +54,19 @@
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.listaAsuntosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.companyBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaCompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.descripcionComboBox = new System.Windows.Forms.ComboBox();
+            this.companyBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companyIdComboBox = new System.Windows.Forms.ComboBox();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             descripcionLabel1 = new System.Windows.Forms.Label();
+            companyIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).BeginInit();
             this.listaAsuntosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompanyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -94,10 +96,24 @@
             idLabel.TabIndex = 7;
             idLabel.Text = "Id:";
             // 
-            // listaAsuntosBindingSource
+            // descripcionLabel1
             // 
-            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
-            this.listaAsuntosBindingSource.CurrentChanged += new System.EventHandler(this.listaAsuntosBindingSource_CurrentChanged);
+            descripcionLabel1.AutoSize = true;
+            descripcionLabel1.Location = new System.Drawing.Point(39, 87);
+            descripcionLabel1.Name = "descripcionLabel1";
+            descripcionLabel1.Size = new System.Drawing.Size(55, 13);
+            descripcionLabel1.TabIndex = 10;
+            descripcionLabel1.Text = "Municipio:";
+            descripcionLabel1.Click += new System.EventHandler(this.descripcionLabel1_Click);
+            // 
+            // companyIdLabel
+            // 
+            companyIdLabel.AutoSize = true;
+            companyIdLabel.Location = new System.Drawing.Point(252, 172);
+            companyIdLabel.Name = "companyIdLabel";
+            companyIdLabel.Size = new System.Drawing.Size(66, 13);
+            companyIdLabel.TabIndex = 11;
+            companyIdLabel.Text = "Company Id:";
             // 
             // activoCheckBox
             // 
@@ -107,6 +123,11 @@
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 2;
             this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // listaAsuntosBindingSource
+            // 
+            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
+            this.listaAsuntosBindingSource.CurrentChanged += new System.EventHandler(this.listaAsuntosBindingSource_CurrentChanged);
             // 
             // descripcionTextBox
             // 
@@ -259,7 +280,7 @@
             this.listaAsuntosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaAsuntosBindingNavigator.Name = "listaAsuntosBindingNavigator";
             this.listaAsuntosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaAsuntosBindingNavigator.Size = new System.Drawing.Size(534, 25);
+            this.listaAsuntosBindingNavigator.Size = new System.Drawing.Size(399, 25);
             this.listaAsuntosBindingNavigator.TabIndex = 0;
             this.listaAsuntosBindingNavigator.Text = "bindingNavigator1";
             this.listaAsuntosBindingNavigator.RefreshItems += new System.EventHandler(this.listaAsuntosBindingNavigator_RefreshItems);
@@ -268,41 +289,37 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // companyBLBindingSource
-            // 
-            this.companyBLBindingSource.DataSource = typeof(Denuncias.BL.CompanyBL);
-            // 
             // listaCompanyBindingSource
             // 
             this.listaCompanyBindingSource.DataMember = "ListaCompany";
             this.listaCompanyBindingSource.DataSource = this.companyBLBindingSource;
+            this.listaCompanyBindingSource.CurrentChanged += new System.EventHandler(this.listaCompanyBindingSource_CurrentChanged);
             // 
-            // descripcionLabel1
+            // companyBLBindingSource
             // 
-            descripcionLabel1.AutoSize = true;
-            descripcionLabel1.Location = new System.Drawing.Point(39, 87);
-            descripcionLabel1.Name = "descripcionLabel1";
-            descripcionLabel1.Size = new System.Drawing.Size(55, 13);
-            descripcionLabel1.TabIndex = 10;
-            descripcionLabel1.Text = "Municipio:";
-            descripcionLabel1.Click += new System.EventHandler(this.descripcionLabel1_Click);
+            this.companyBLBindingSource.DataSource = typeof(Denuncias.BL.CompanyBL);
             // 
-            // descripcionComboBox
+            // companyIdComboBox
             // 
-            this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCompanyBindingSource, "Descripcion", true));
-            this.descripcionComboBox.FormattingEnabled = true;
-            this.descripcionComboBox.Location = new System.Drawing.Point(111, 84);
-            this.descripcionComboBox.Name = "descripcionComboBox";
-            this.descripcionComboBox.Size = new System.Drawing.Size(199, 21);
-            this.descripcionComboBox.TabIndex = 11;
+            this.companyIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaAsuntosBindingSource, "CompanyId", true));
+            this.companyIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCompanyBindingSource, "Descripcion", true));
+            this.companyIdComboBox.DataSource = this.listaCompanyBindingSource;
+            this.companyIdComboBox.DisplayMember = "Descripcion";
+            this.companyIdComboBox.FormattingEnabled = true;
+            this.companyIdComboBox.Location = new System.Drawing.Point(111, 79);
+            this.companyIdComboBox.Name = "companyIdComboBox";
+            this.companyIdComboBox.Size = new System.Drawing.Size(199, 21);
+            this.companyIdComboBox.TabIndex = 12;
+            this.companyIdComboBox.ValueMember = "Id";
             // 
             // FormClasificacionAsunto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 248);
+            this.ClientSize = new System.Drawing.Size(399, 212);
+            this.Controls.Add(companyIdLabel);
+            this.Controls.Add(this.companyIdComboBox);
             this.Controls.Add(descripcionLabel1);
-            this.Controls.Add(this.descripcionComboBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionLabel);
@@ -316,8 +333,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).EndInit();
             this.listaAsuntosBindingNavigator.ResumeLayout(false);
             this.listaAsuntosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompanyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBLBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,6 +362,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource companyBLBindingSource;
         private System.Windows.Forms.BindingSource listaCompanyBindingSource;
-        private System.Windows.Forms.ComboBox descripcionComboBox;
+        private System.Windows.Forms.ComboBox companyIdComboBox;
     }
 }
