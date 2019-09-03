@@ -56,6 +56,7 @@
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoSolicitanteBL.cs" />
+    <Compile Include="TransaccionBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
