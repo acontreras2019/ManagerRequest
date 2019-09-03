@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Denuncias.BL
 {
-    public class DatosdeInicio : CreateDatabaseIfNotExists<Contexto>//Agregar DocumentBL
+    public class DatosdeInicio : CreateDatabaseIfNotExists<Contexto>
     {
         protected override void Seed(Contexto contexto)
         {

@@ -26,6 +26,7 @@ namespace Denuncias.BL
         public DbSet<Asunto> Asunto { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-       
+        public DbSet<TipoSolicitante> TipoSolicitante { get; set; }
+
     }
 }

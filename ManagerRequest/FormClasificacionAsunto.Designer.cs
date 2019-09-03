@@ -280,7 +280,7 @@
             this.listaAsuntosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaAsuntosBindingNavigator.Name = "listaAsuntosBindingNavigator";
             this.listaAsuntosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaAsuntosBindingNavigator.Size = new System.Drawing.Size(399, 25);
+            this.listaAsuntosBindingNavigator.Size = new System.Drawing.Size(415, 25);
             this.listaAsuntosBindingNavigator.TabIndex = 0;
             this.listaAsuntosBindingNavigator.Text = "bindingNavigator1";
             this.listaAsuntosBindingNavigator.RefreshItems += new System.EventHandler(this.listaAsuntosBindingNavigator_RefreshItems);
@@ -288,6 +288,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // listaCompanyBindingSource
             // 
@@ -311,12 +312,13 @@
             this.companyIdComboBox.Size = new System.Drawing.Size(199, 21);
             this.companyIdComboBox.TabIndex = 12;
             this.companyIdComboBox.ValueMember = "Id";
+            this.companyIdComboBox.SelectedIndexChanged += new System.EventHandler(this.companyIdComboBox_SelectedIndexChanged);
             // 
             // FormClasificacionAsunto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 212);
+            this.ClientSize = new System.Drawing.Size(415, 253);
             this.Controls.Add(companyIdLabel);
             this.Controls.Add(this.companyIdComboBox);
             this.Controls.Add(descripcionLabel1);

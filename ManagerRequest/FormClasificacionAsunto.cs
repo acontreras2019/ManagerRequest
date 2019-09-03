@@ -122,6 +122,16 @@ namespace ManagerRequest
         {
 
         }
+
+        private void companyIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
 
