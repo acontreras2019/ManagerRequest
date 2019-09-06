@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Denuncias.BL
 {
-    public class Contexto: DbContext
+    public class Contexto : DbContext
     {
-        public Contexto(): base("Asuntos4")
+        public Contexto() : base("Asuntos3")
         {
 
         }
@@ -29,6 +29,8 @@ namespace Denuncias.BL
         public DbSet<TipoSolicitante> TipoSolicitante { get; set; }
         public DbSet<TipoMedio> TipoMedio { get; set; }
         public DbSet<Transaccion> Transaccion { get; set; }
+        public DbSet<TipodeDocumento> TipodeDocumento { get; set; }
+
 
     }
 }
