@@ -31,6 +31,10 @@ namespace Denuncias.BL
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
+        public string Telefono { get; set; }
+        public int CiudadId { get; set; }
+        public Ciudad Ciudad { get; set; }
+        public string Direccion { get; set; }
     }
 }
 

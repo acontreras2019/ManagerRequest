@@ -132,6 +132,16 @@ namespace ManagerRequest
         {
 
         }
+
+        private void companyIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormClasificacionAsunto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

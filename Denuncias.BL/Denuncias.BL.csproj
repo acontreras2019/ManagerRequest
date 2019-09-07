@@ -49,12 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsuntosBL.cs" />
+    <Compile Include="CiudadBL.cs" />
+    <Compile Include="ColoniaBL.cs" />
     <Compile Include="CompanyBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="DatosdeInicio.cs" />
+    <Compile Include="Dbset.cs" />
     <Compile Include="DocumentosBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipodeDocumentoBL.cs" />
+    <Compile Include="TipoMedioBL.cs" />
     <Compile Include="TipoSolicitanteBL.cs" />
     <Compile Include="TransaccionBL.cs" />
   </ItemGroup>
@@ -63,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CompanyBL1.1" />
+    <None Include="DatosInici1.1" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

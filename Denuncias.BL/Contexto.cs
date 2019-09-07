@@ -19,6 +19,16 @@ namespace Denuncias.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Ciudad>()
+                .HasRequired(f => f.Usuario)
+                .WithRequiredDependent()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Asunto>()
+                .HasRequired(f => f.Usuario)
+                .WithRequiredDependent()
+                .WillCascadeOnDelete(false);
+
             Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD
 
         }
@@ -30,6 +40,8 @@ namespace Denuncias.BL
         public DbSet<TipoMedio> TipoMedio { get; set; }
         public DbSet<Transaccion> Transaccion { get; set; }
         public DbSet<TipodeDocumento> TipodeDocumento { get; set; }
+        public DbSet<Ciudad> Ciudad { get; set; }
+        public DbSet<Colonia> Colonia { get; set; }
 
 
     }

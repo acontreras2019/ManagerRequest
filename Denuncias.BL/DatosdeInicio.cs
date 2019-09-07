@@ -29,6 +29,18 @@ namespace Denuncias.BL
             company3.Descripcion = "Municipalidad San Manuel";
             contexto.Company.Add(company3);
 
+            var ciudad1 = new Ciudad();
+            ciudad1.CiudadNombre = "San Pedro Sula";
+            ciudad1.PaisNombre = "Honduras";
+            ciudad1.Codigo = "504";
+            contexto.Ciudad.Add(ciudad1);
+
+            var ciudad2 = new Ciudad();
+            ciudad2.CiudadNombre = "La Lima";
+            ciudad2.PaisNombre = "Honduras";
+            ciudad2.Codigo = "512";
+            contexto.Ciudad.Add(ciudad1);
+
             base.Seed(contexto);
         }
     }

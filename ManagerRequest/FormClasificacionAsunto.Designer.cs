@@ -33,7 +33,6 @@
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label descripcionLabel1;
-            System.Windows.Forms.Label companyIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClasificacionAsunto));
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,7 +60,6 @@
             descripcionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             descripcionLabel1 = new System.Windows.Forms.Label();
-            companyIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).BeginInit();
             this.listaAsuntosBindingNavigator.SuspendLayout();
@@ -105,15 +103,6 @@
             descripcionLabel1.TabIndex = 10;
             descripcionLabel1.Text = "Municipio:";
             descripcionLabel1.Click += new System.EventHandler(this.descripcionLabel1_Click);
-            // 
-            // companyIdLabel
-            // 
-            companyIdLabel.AutoSize = true;
-            companyIdLabel.Location = new System.Drawing.Point(252, 172);
-            companyIdLabel.Name = "companyIdLabel";
-            companyIdLabel.Size = new System.Drawing.Size(66, 13);
-            companyIdLabel.TabIndex = 11;
-            companyIdLabel.Text = "Company Id:";
             // 
             // activoCheckBox
             // 
@@ -319,7 +308,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 253);
-            this.Controls.Add(companyIdLabel);
             this.Controls.Add(this.companyIdComboBox);
             this.Controls.Add(descripcionLabel1);
             this.Controls.Add(activoLabel);
@@ -331,6 +319,7 @@
             this.Controls.Add(this.listaAsuntosBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClasificacionAsunto";
+            this.Load += new System.EventHandler(this.FormClasificacionAsunto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaAsuntosBindingNavigator)).EndInit();
             this.listaAsuntosBindingNavigator.ResumeLayout(false);

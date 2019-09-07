@@ -53,5 +53,12 @@ namespace ManagerRequest
             formTipoTransaccion.MdiParent = this;
             formTipoTransaccion.Show();
         }
+
+        private void ciudadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formTipoTransaccion = new FormCiudad();
+            formTipoTransaccion.MdiParent = this;
+            formTipoTransaccion.Show();
+        }
     }
 }
