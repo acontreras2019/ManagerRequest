@@ -93,7 +93,39 @@ namespace ManagerRequest
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-         
+            _transaccionBL.AgregarTransaccion();
+            listaTransaccionBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
         }
+        private void DeshabilitarHabilitarBotones(bool valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = valor;
+            bindingNavigatorMoveLastItem.Enabled = valor;
+            bindingNavigatorMovePreviousItem.Enabled = valor;
+            bindingNavigatorMoveNextItem.Enabled = valor;
+            bindingNavigatorPositionItem.Enabled = valor;
+
+            bindingNavigatorAddNewItem.Enabled = valor;
+            bindingNavigatorDeleteItem.Enabled = valor;
+            toolStripButtonCancelar.Visible = !valor;
+        }
+
+        private void listaTransaccionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            listaTransaccionBindingSource.EndEdit();
+
+            var transaccion = (Transaccion)listaTransaccionBindingSource.Current;
+            var resultado = _transaccionBL.GuardarTransaccion(transaccion);
+
+            if (resultado.exitoso == true)
+
+            {
+                listaTransaccionBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
+            }
+                }
+
+                      
     }
 }

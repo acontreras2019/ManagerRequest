@@ -55,7 +55,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.listaTransaccionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1Cancelar = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripLabel();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.listaCiudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaRespuestaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -219,7 +219,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaTransaccionBindingNavigatorSaveItem,
-            this.toolStripButton1Cancelar});
+            this.toolStripButtonCancelar});
             this.listaTransaccionBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaTransaccionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaTransaccionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -243,7 +243,7 @@
             // 
             // listaTransaccionBindingSource
             // 
-            this.listaTransaccionBindingSource.DataSource = typeof(Transaccion);
+            this.listaTransaccionBindingSource.DataSource = typeof(FormTipoTransaccion);
             // 
             // bindingNavigatorCountItem
             // 
@@ -328,15 +328,16 @@
             this.listaTransaccionBindingNavigatorSaveItem.Name = "listaTransaccionBindingNavigatorSaveItem";
             this.listaTransaccionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.listaTransaccionBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.listaTransaccionBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaTransaccionBindingNavigatorSaveItem_Click);
             // 
-            // toolStripButton1Cancelar
+            // toolStripButtonCancelar
             // 
-            this.toolStripButton1Cancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1Cancelar.Image")));
-            this.toolStripButton1Cancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1Cancelar.Name = "toolStripButton1Cancelar";
-            this.toolStripButton1Cancelar.Size = new System.Drawing.Size(53, 22);
-            this.toolStripButton1Cancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(53, 22);
+            this.toolStripButtonCancelar.Text = "Cancelar";
             // 
             // activoCheckBox
             // 
@@ -587,7 +588,7 @@
         private System.Windows.Forms.ComboBox coloniaNombreComboBox;
         private System.Windows.Forms.BindingSource listaCiudadBindingSource;
         private System.Windows.Forms.ComboBox ciudadNombreComboBox;
-        private System.Windows.Forms.ToolStripLabel toolStripButton1Cancelar;
+        private System.Windows.Forms.ToolStripLabel toolStripButtonCancelar;
         private System.Windows.Forms.BindingSource documentoBindingSource;
         private System.Windows.Forms.DataGridView asuntoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

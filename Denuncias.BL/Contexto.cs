@@ -29,6 +29,11 @@ namespace Denuncias.BL
                 .WithRequiredDependent()
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Transaccion>()
+                .HasRequired(f => f.Usuario)
+                .WithRequiredDependent()
+                .WillCascadeOnDelete(false);
+
             Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD
 
         }

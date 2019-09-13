@@ -28,31 +28,81 @@ namespace Denuncias.BL
 
             return ListaTransaccion;
         }
+        public BindingList<Transaccion> AgregarTransaccion()
+        {
+            _contexto.Transaccion.Load();
+            ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
 
-      
+            return ListaTransaccion;
+        }
+        public string GuardarTransaccion(Transaccion transaccion)
+        {
+
+            var vd = validarDatos(transaccion);
+            if (vd == "OK")
+            {
+
+                _contexto.SaveChanges();
+
+
+                return transaccion.Id.ToString();
             }
-}
-public class Transaccion
+            else
+            {
+                return vd;
+            }
+        }
+            
+             private string validarDatos(Transaccion a)
+        {
+            var validacion = "";
+            if (!((a.Id) > 0))
+            {
+                validacion = "Error en Compania";
+            }
 
-{
-    public int Id { get; set; }
-    public String status { get; set; }
-    public DateTime FechaTransaccion { get; set; }
-    public string UsuarioNombre { get; set; }
-    public int TipoUsuarioId { get; set; }
-    public Usuario TipoUsuario { get; set; }
-    public int MedioId { get; set; }
-    public TipoMedio TipoMedio { get; set; }
-    public DateTime FechaRecibo { get; set; }
-    public DateTime FechaRespuesta { get; set; }
-    public string Receptor { get; set; }
-    public bool Activo { get; set; }
+            if (string.IsNullOrEmpty(a.UsuarioNombre))
+            {
+                validacion = validacion + " -- " + "Error en Usuario Nombre";
+            }
+            //if (!((a.UsuarioIdCreador)>0)) {
+            //    validacion = validacion + " -- " + "Error en Usuario";
+            //}
+
+            if (validacion.Length == 0)
+            {
+                validacion = "OK";
+            }
+            return validacion;
+        }
 
 
-    public Transaccion()
-    {
-        FechaTransaccion = DateTime.Now;
-        Activo = true;
     }
-}
+    }
+    public class Transaccion
+
+    {
+        public int Id { get; set; }
+        public String status { get; set; }
+        public DateTime FechaTransaccion { get; set; }
+        public string UsuarioNombre { get; set; }
+        public int TipoUsuarioId { get; set; }
+        public Usuario TipoUsuario { get; set; }
+        public int MedioId { get; set; }
+        public TipoMedio TipoMedio { get; set; }
+        public DateTime FechaRecibo { get; set; }
+        public DateTime FechaRespuesta { get; set; }
+        public string Receptor { get; set; }
+        public bool Activo { get; set; }
+        public Usuario Usuario { get; set; }
+
+
+        public Transaccion()
+        {
+            FechaTransaccion = DateTime.Now;
+            Activo = true;
+        }
+    }
+
+
     
