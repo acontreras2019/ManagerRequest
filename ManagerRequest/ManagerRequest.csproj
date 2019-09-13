@@ -130,6 +130,7 @@
     <None Include="Properties\DataSources\Denuncias.BL.DocumentosBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.SeguridadBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.TipodeDocumentoBL.datasource" />
+    <None Include="Properties\DataSources\Denuncias.BL.TipoMedioBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.TransaccionBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

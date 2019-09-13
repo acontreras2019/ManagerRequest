@@ -19,6 +19,7 @@ namespace ManagerRequest
         CiudadBL _ciudadBL;
        TipodeDocumentoBL _tipodedocumentoBL;
         AsuntosBL _asuntoBL;
+        TipoMedioBL _tipoMedioBL;
 
 
         public FormNueva()
@@ -36,6 +37,10 @@ namespace ManagerRequest
 
             _tipodedocumentoBL = new TipodeDocumentoBL();
             listatipoDocumentoBindingSource.DataSource = _tipodedocumentoBL.Obtenertipodedocumento();
+
+
+            _tipoMedioBL = new TipoMedioBL();
+            listatipoDocumentoBindingSource.DataSource = _tipoMedioBL.Obtenermedios();
 
             _asuntoBL = new AsuntosBL();
             listaAsuntosBindingSource.DataSource = _asuntoBL.ObtenerAsuntos();
@@ -118,7 +123,7 @@ namespace ManagerRequest
             var transaccion = (Transaccion)listaTransaccionBindingSource.Current;
             var resultado = _transaccionBL.GuardarTransaccion(transaccion);
 
-            if (resultado.exitoso == true)
+            if (resultado == "Ok")
 
             {
                 listaTransaccionBindingSource.ResetBindings(false);

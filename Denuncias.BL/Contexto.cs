@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
+    using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace Denuncias.BL
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("Asuntos1")
+        public Contexto() : base("PortalDenunciaSolicitud")
         {
 
         }
@@ -23,6 +23,11 @@ namespace Denuncias.BL
                 .HasRequired(f => f.Usuario)
                 .WithRequiredDependent()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Company>()
+              .HasRequired(f => f.Ciudad)
+              .WithRequiredDependent()
+              .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Asunto>()
                 .HasRequired(f => f.Usuario)

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Denuncias.BL
 {
@@ -26,7 +28,7 @@ namespace Denuncias.BL
         //    return false;
         //}
 
-        Contexto _contexto;
+        Contexto _contexto = new Contexto();
         public BindingList<Usuario> ListaUsuarios { get; set; }
         public SeguridadBL()
         {
@@ -57,6 +59,7 @@ namespace Denuncias.BL
 
         public class Usuario
     {
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string UsuarioNombre { get; set; }
         public string Contrasena { get; set; }
