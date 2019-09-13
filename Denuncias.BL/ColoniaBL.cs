@@ -19,7 +19,7 @@ namespace Denuncias.BL
             _contexto = new Contexto();
             ListaColonia = new BindingList<Colonia>();
         }
-        public BindingList<Colonia> ObtenerCompanies()
+        public BindingList<Colonia> ObtenerColonia()
         {
             _contexto.Colonia.Load();
             ListaColonia = _contexto.Colonia.Local.ToBindingList();

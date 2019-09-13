@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Denuncias.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
@@ -28,23 +29,30 @@ namespace Denuncias.BL
             return ListaTransaccion;
         }
 
+      
+            }
+}
+public class Transaccion
+
+{
+    public int Id { get; set; }
+    public String status { get; set; }
+    public DateTime FechaTransaccion { get; set; }
+    public string UsuarioNombre { get; set; }
+    public int TipoUsuarioId { get; set; }
+    public Usuario TipoUsuario { get; set; }
+    public int MedioId { get; set; }
+    public TipoMedio TipoMedio { get; set; }
+    public DateTime FechaRecibo { get; set; }
+    public DateTime FechaRespuesta { get; set; }
+    public string Receptor { get; set; }
+    public bool Activo { get; set; }
 
 
-
-
-    }
-    public class Transaccion
-
+    public Transaccion()
     {
-        public int Id { get; set; }
-        public String status { get; set; }
-        public DateTime FechaTransaccion { get; set; }
-        public string UsuarioNombre { get; set; }
-        public int TipoUsuarioId { get; set; }
-        public int MedioId { get; set; }
-        public DateTime FechaRecibo { get; set; }
-        public DateTime FechaRespuesta { get; set; }
-        public string Receptor { get; set; }
-
+        FechaTransaccion = DateTime.Now;
+        Activo = true;
     }
 }
+    

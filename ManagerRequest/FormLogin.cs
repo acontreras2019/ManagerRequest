@@ -18,11 +18,11 @@ namespace ManagerRequest
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+
             string usuario = textBox1.Text;
             string contraseña = textBox2.Text;
 
-          var usuarioDB = _seguridad.Autorizar(usuario, contraseña);
+            var usuarioDB = _seguridad.Autorizar(usuario, contraseña);
 
             if (usuarioDB != null)
             {
@@ -31,11 +31,12 @@ namespace ManagerRequest
                 var form = new Form1();
                 form.Show();
             }
-            
-                else{
-                    MessageBox.Show("usuario o contraseña incorrecta");
-                }
-               
+
+            else
+            {
+                MessageBox.Show("usuario o contraseña incorrecta");
+            }
+
         }
 
         private void Button2_Click(object sender, EventArgs e)

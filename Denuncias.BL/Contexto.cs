@@ -11,7 +11,7 @@ namespace Denuncias.BL
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("Asuntos3")
+        public Contexto() : base("Asuntos1")
         {
 
         }
@@ -42,6 +42,7 @@ namespace Denuncias.BL
         public DbSet<TipodeDocumento> TipodeDocumento { get; set; }
         public DbSet<Ciudad> Ciudad { get; set; }
         public DbSet<Colonia> Colonia { get; set; }
+        
 
 
     }
