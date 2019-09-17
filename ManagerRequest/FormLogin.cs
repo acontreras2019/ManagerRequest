@@ -23,6 +23,7 @@ namespace ManagerRequest
             string contraseña = textBox2.Text;
 
             var usuarioDB = _seguridad.Autorizar(usuario, contraseña);
+        
 
             if (usuarioDB != null)
             {
@@ -48,5 +49,8 @@ namespace ManagerRequest
         {
 
         }
+
+      
+  
     }
 }

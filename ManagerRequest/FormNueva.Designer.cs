@@ -223,7 +223,7 @@
             this.listaTransaccionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaTransaccionBindingNavigator.Name = "listaTransaccionBindingNavigator";
             this.listaTransaccionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(593, 25);
+            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(650, 25);
             this.listaTransaccionBindingNavigator.TabIndex = 3;
             this.listaTransaccionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -244,8 +244,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorDeleteItem
@@ -452,7 +452,7 @@
             this.listaAsuntosListBox.MultiColumn = true;
             this.listaAsuntosListBox.Name = "listaAsuntosListBox";
             this.listaAsuntosListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listaAsuntosListBox.Size = new System.Drawing.Size(551, 30);
+            this.listaAsuntosListBox.Size = new System.Drawing.Size(551, 69);
             this.listaAsuntosListBox.TabIndex = 24;
             this.listaAsuntosListBox.ValueMember = "Activo";
             // 
@@ -475,7 +475,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 671);
+            this.ClientSize = new System.Drawing.Size(650, 362);
             this.Controls.Add(this.listamedioComboBox);
             this.Controls.Add(this.listaAsuntosListBox);
             this.Controls.Add(ciudadNombreLabel);
