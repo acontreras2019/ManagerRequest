@@ -13,7 +13,7 @@ namespace ManagerRequest
 {
     public partial class FormNueva : Form
     {
-
+        TipoSolicitanteBL _tiposolicitanteBL;
         TransaccionBL _transaccionBL;
         ColoniaBL _coloniaBL;
         CiudadBL _ciudadBL;
@@ -40,10 +40,14 @@ namespace ManagerRequest
 
 
             _tipoMedioBL = new TipoMedioBL();
-            listatipoDocumentoBindingSource.DataSource = _tipoMedioBL.Obtenermedios();
+            listamedioBindingSource.DataSource = _tipoMedioBL.Obtenermedios();
 
             _asuntoBL = new AsuntosBL();
             listaAsuntosBindingSource.DataSource = _asuntoBL.ObtenerAsuntos();
+
+            _tiposolicitanteBL = new TipoSolicitanteBL();
+            listasolicitantesBindingSource.DataSource = _tiposolicitanteBL.ObtenerSolicitantes();
+
         }
 
         private void Label1_Click(object sender, EventArgs e)

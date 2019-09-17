@@ -70,7 +70,13 @@ namespace Denuncias.BL
     { 
     public int Id { get; set; }
     public string DescripcionEstatus { get; set; }
-    public DateTime TiempoEstatus { get; set; }
+    public DateTime FechaInicio { get; set; }
+    public DateTime FechaFin { get; set; }
+    public Transaccion Transaccion { get; set; }
+    public int TransaccionId { get; set; }
+    public Usuario Usuario { get; set; }
+    public int UsuarioId { get; set; }
+        public string Comentario { get; set; }
 
-}
+    }
 }

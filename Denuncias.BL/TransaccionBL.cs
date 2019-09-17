@@ -77,7 +77,7 @@ namespace Denuncias.BL
         }
 
 
-    }
+    
     }
     public class Transaccion
 
@@ -86,25 +86,24 @@ namespace Denuncias.BL
         public string status { get; set; }
         public DateTime FechaTransaccion { get; set; }
         public string UsuarioNombre { get; set; }
-        public int TipoUsuarioId { get; set; }
-        public Usuario TipoUsuario { get; set; }
-        public int MedioId { get; set; }
+        public int TipoSolicitanteId { get; set; }
+        public TipoSolicitante TipoSolicitante { get; set; }
+        public int TipoMedioId { get; set; }
         public TipoMedio TipoMedio { get; set; }
-        public DateTime FechaRecibo { get; set; }
-        public DateTime FechaRespuesta { get; set; }
-        public string Receptor { get; set; }
-        public bool Activo { get; set; }
+        
+        public string UsuarioId { get; set; }
+        public string Estatus { get; set; }
         public Usuario Usuario { get; set; }
 
 
-        public Transaccion()
-        {
-            FechaTransaccion = DateTime.Now;
-            FechaRecibo = DateTime.Now;
-            FechaRespuesta = DateTime.Now;
-        Activo = true;
-        }
+        //public Transaccion()
+        //{
+        //    //FechaTransaccion = DateTime.Now;
+        //    //FechaRecibo = DateTime.Now;
+        //    //FechaRespuesta = DateTime.Now;
+       
+        //}
     }
-
+}
 
     
