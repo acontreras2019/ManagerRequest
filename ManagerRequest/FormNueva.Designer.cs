@@ -73,7 +73,7 @@
             this.listaUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaAsuntosListBox = new System.Windows.Forms.ListBox();
             this.listamedioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listamedioComboBox = new System.Windows.Forms.ComboBox();
+            this.descripcionComboBox = new System.Windows.Forms.ComboBox();
             activoLabel = new System.Windows.Forms.Label();
             fechaRespuestaLabel = new System.Windows.Forms.Label();
             fechaTransaccionLabel = new System.Windows.Forms.Label();
@@ -237,10 +237,6 @@
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            // listaTransaccionBindingSource
-            // 
-            this.listaTransaccionBindingSource.DataSource = typeof(ManagerRequest.FormTipoTransaccion);
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -345,14 +341,12 @@
             this.activoCheckBox.UseVisualStyleBackColor = true;
             this.activoCheckBox.Visible = false;
             // 
-            // listaCiudadBindingSource
-            // 
-            this.listaCiudadBindingSource.DataSource = typeof(Denuncias.BL.Ciudad);
-            // 
             // fechaRespuestaDateTimePicker
             // 
             this.fechaRespuestaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaTransaccionBindingSource, "FechaRespuesta", true));
             this.fechaRespuestaDateTimePicker.Location = new System.Drawing.Point(120, 188);
+            this.fechaRespuestaDateTimePicker.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.fechaRespuestaDateTimePicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.fechaRespuestaDateTimePicker.Name = "fechaRespuestaDateTimePicker";
             this.fechaRespuestaDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaRespuestaDateTimePicker.TabIndex = 8;
@@ -361,9 +355,12 @@
             // 
             this.fechaTransaccionDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaTransaccionBindingSource, "FechaTransaccion", true));
             this.fechaTransaccionDateTimePicker.Location = new System.Drawing.Point(120, 153);
+            this.fechaTransaccionDateTimePicker.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.fechaTransaccionDateTimePicker.MinDate = new System.DateTime(2000, 9, 24, 23, 59, 0, 0);
             this.fechaTransaccionDateTimePicker.Name = "fechaTransaccionDateTimePicker";
             this.fechaTransaccionDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaTransaccionDateTimePicker.TabIndex = 10;
+            this.fechaTransaccionDateTimePicker.Value = new System.DateTime(2019, 9, 24, 23, 59, 59, 0);
             // 
             // idTextBox
             // 
@@ -397,18 +394,6 @@
             this.usuarioNombreTextBox.Size = new System.Drawing.Size(200, 20);
             this.usuarioNombreTextBox.TabIndex = 22;
             // 
-            // listaAsuntosBindingSource
-            // 
-            this.listaAsuntosBindingSource.DataSource = typeof(Denuncias.BL.Asunto);
-            // 
-            // listatipoDocumentoBindingSource
-            // 
-            this.listatipoDocumentoBindingSource.DataSource = typeof(Denuncias.BL.TipodeDocumento);
-            // 
-            // listaColoniaBindingSource
-            // 
-            this.listaColoniaBindingSource.DataSource = typeof(Denuncias.BL.Colonia);
-            // 
             // coloniaNombreComboBox
             // 
             this.coloniaNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaColoniaBindingSource, "ColoniaNombre", true));
@@ -435,14 +420,6 @@
             this.ciudadNombreComboBox.TabIndex = 24;
             this.ciudadNombreComboBox.ValueMember = "CiudadNombre";
             // 
-            // documentoBindingSource
-            // 
-            this.documentoBindingSource.DataSource = typeof(Denuncias.BL.Documento);
-            // 
-            // listaUsuariosBindingSource
-            // 
-            this.listaUsuariosBindingSource.DataSource = typeof(Denuncias.BL.Usuario);
-            // 
             // listaAsuntosListBox
             // 
             this.listaAsuntosListBox.DataSource = this.listaAsuntosBindingSource;
@@ -460,23 +437,25 @@
             // 
             this.listamedioBindingSource.DataSource = typeof(Denuncias.BL.TipoMedio);
             // 
-            // listamedioComboBox
+            // descripcionComboBox
             // 
-            this.listamedioComboBox.DataSource = this.listamedioBindingSource;
-            this.listamedioComboBox.DisplayMember = "Descripcion";
-            this.listamedioComboBox.FormattingEnabled = true;
-            this.listamedioComboBox.Location = new System.Drawing.Point(120, 126);
-            this.listamedioComboBox.Name = "listamedioComboBox";
-            this.listamedioComboBox.Size = new System.Drawing.Size(200, 21);
-            this.listamedioComboBox.TabIndex = 24;
-            this.listamedioComboBox.ValueMember = "Descripcion";
+            this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listamedioBindingSource, "Id", true));
+            this.descripcionComboBox.DataSource = this.listamedioBindingSource;
+            this.descripcionComboBox.DisplayMember = "Descripcion";
+            this.descripcionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.descripcionComboBox.FormattingEnabled = true;
+            this.descripcionComboBox.Location = new System.Drawing.Point(120, 124);
+            this.descripcionComboBox.Name = "descripcionComboBox";
+            this.descripcionComboBox.Size = new System.Drawing.Size(200, 21);
+            this.descripcionComboBox.TabIndex = 25;
+            this.descripcionComboBox.ValueMember = "Id";
             // 
             // FormNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 671);
-            this.Controls.Add(this.listamedioComboBox);
+            this.Controls.Add(this.descripcionComboBox);
             this.Controls.Add(this.listaAsuntosListBox);
             this.Controls.Add(ciudadNombreLabel);
             this.Controls.Add(this.ciudadNombreComboBox);
@@ -553,6 +532,6 @@
         private System.Windows.Forms.BindingSource listaUsuariosBindingSource;
         private System.Windows.Forms.ListBox listaAsuntosListBox;
         private System.Windows.Forms.BindingSource listamedioBindingSource;
-        private System.Windows.Forms.ComboBox listamedioComboBox;
+        private System.Windows.Forms.ComboBox descripcionComboBox;
     }
 }
