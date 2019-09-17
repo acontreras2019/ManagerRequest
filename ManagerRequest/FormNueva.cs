@@ -102,7 +102,7 @@ namespace ManagerRequest
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            _transaccionBL.AgregarTransaccion();
+            _transaccionBL.AgregarTransacciom();
             listaTransaccionBindingSource.MoveLast();
 
             DeshabilitarHabilitarBotones(false);
@@ -125,6 +125,8 @@ namespace ManagerRequest
             listaTransaccionBindingSource.EndEdit();
 
             var transaccion = (Transaccion)listaTransaccionBindingSource.Current;
+            transaccion.Usuario = Program.usuario;
+            transaccion.Estatus = "nueva";
             var resultado = _transaccionBL.GuardarTransaccion(transaccion);
 
             if (resultado == "Ok")
@@ -135,6 +137,12 @@ namespace ManagerRequest
             }
                 }
 
-                      
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
+        {
+            DeshabilitarHabilitarBotones(true);
+       
+        }
+
+
     }
 }

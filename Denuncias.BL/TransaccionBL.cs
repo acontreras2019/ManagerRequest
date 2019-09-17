@@ -28,13 +28,20 @@ namespace Denuncias.BL
 
             return ListaTransaccion;
         }
-        public BindingList<Transaccion> AgregarTransaccion()
-        {
-            _contexto.Transaccion.Load();
-            ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
+        //public BindingList<Transaccion> AgregarTransaccion()
+        //{
+        //    _contexto.Transaccion.Load();
+        //    ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
 
-            return ListaTransaccion;
+        //    return ListaTransaccion;
+        //}
+
+        public void AgregarTransacciom()
+        {
+            var nuevaTransaccion = new Transaccion();
+            ListaTransaccion.Add(nuevaTransaccion);
         }
+
         public string GuardarTransaccion(Transaccion transaccion)
         {
 
@@ -56,9 +63,9 @@ namespace Denuncias.BL
              private string validarDatos(Transaccion a)
         {
             var validacion = "";
-            if (!((a.Id) > 0))
+            if (!((a.Id) >= 0))
             {
-                validacion = "Error en Compania";
+                validacion = "Error en Transaccion";
             }
 
             if (string.IsNullOrEmpty(a.UsuarioNombre))
@@ -83,26 +90,30 @@ namespace Denuncias.BL
 
     {
         public int Id { get; set; }
-        public string status { get; set; }
+        
         public DateTime FechaTransaccion { get; set; }
         public string UsuarioNombre { get; set; }
         public int TipoSolicitanteId { get; set; }
         public TipoSolicitante TipoSolicitante { get; set; }
         public int TipoMedioId { get; set; }
         public TipoMedio TipoMedio { get; set; }
-        
+        public int CiudadId { get; set; }
+        public Ciudad Ciudad { get; set; }
+        public int ColoniaId { get; set; }
+        public Colonia Colonia { get; set; }
         public string UsuarioId { get; set; }
         public string Estatus { get; set; }
         public Usuario Usuario { get; set; }
+        public int AsuntoId { get; set; }
+        public Asunto Asunto { get; set; }
 
 
-        //public Transaccion()
-        //{
-        //    //FechaTransaccion = DateTime.Now;
-        //    //FechaRecibo = DateTime.Now;
-        //    //FechaRespuesta = DateTime.Now;
-       
-        //}
+        public Transaccion()
+        {
+            FechaTransaccion = DateTime.Now;
+           
+
+        }
     }
 }
 

@@ -157,10 +157,10 @@ namespace Denuncias.BL
             tipoDocumento1.Descripcion = "Solicitud";
             contexto.TipodeDocumento.Add(tipoDocumento1);
 
-            //var tipoDocumento2 = new TipodeDocumento();
-            //tipoDocumento2.Id = 2;
-            //tipoDocumento2.Descripcion = "Denuncia";
-            //contexto.TipodeDocumento.Add(tipoDocumento2);
+            var tipoSolicitante1 = new TipoSolicitante();
+            tipoSolicitante1.Id = 1;
+            tipoSolicitante1.Descripcion = "Gubernamental";
+            contexto.TipoSolicitante.Add(tipoSolicitante1);
             //#endregion
 
             base.Seed(contexto);

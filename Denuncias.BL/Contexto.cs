@@ -39,6 +39,31 @@ namespace Denuncias.BL
                 .WithRequiredDependent()
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Transaccion>()
+               .HasRequired(f => f.TipoMedio)
+               .WithRequiredDependent()
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Transaccion>()
+               .HasRequired(f => f.TipoSolicitante)
+               .WithRequiredDependent()
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Transaccion>()
+               .HasRequired(f => f.Ciudad)
+               .WithRequiredDependent()
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Transaccion>()
+               .HasRequired(f => f.Colonia)
+               .WithRequiredDependent()
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Transaccion>()
+              .HasRequired(f => f.Asunto)
+              .WithRequiredDependent()
+              .WillCascadeOnDelete(false);
+
             Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD
 
         }

@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label activoLabel;
-            System.Windows.Forms.Label fechaRespuestaLabel;
             System.Windows.Forms.Label fechaTransaccionLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label medioIdLabel;
-            System.Windows.Forms.Label receptorLabel;
             System.Windows.Forms.Label statusLabel;
             System.Windows.Forms.Label usuarioNombreLabel;
             System.Windows.Forms.Label coloniaNombreLabel;
@@ -56,12 +53,9 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.listaTransaccionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripLabel();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.listaCiudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fechaRespuestaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaTransaccionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.receptorTextBox = new System.Windows.Forms.TextBox();
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.usuarioNombreTextBox = new System.Windows.Forms.TextBox();
             this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,12 +68,12 @@
             this.listaAsuntosListBox = new System.Windows.Forms.ListBox();
             this.listamedioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listamedioComboBox = new System.Windows.Forms.ComboBox();
-            activoLabel = new System.Windows.Forms.Label();
-            fechaRespuestaLabel = new System.Windows.Forms.Label();
+            this.listasolicitantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listasolicitantesComboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             fechaTransaccionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             medioIdLabel = new System.Windows.Forms.Label();
-            receptorLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
             usuarioNombreLabel = new System.Windows.Forms.Label();
             coloniaNombreLabel = new System.Windows.Forms.Label();
@@ -94,25 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listamedioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listasolicitantesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(237, 70);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 3;
-            activoLabel.Text = "Activo:";
-            // 
-            // fechaRespuestaLabel
-            // 
-            fechaRespuestaLabel.AutoSize = true;
-            fechaRespuestaLabel.Location = new System.Drawing.Point(12, 192);
-            fechaRespuestaLabel.Name = "fechaRespuestaLabel";
-            fechaRespuestaLabel.Size = new System.Drawing.Size(94, 13);
-            fechaRespuestaLabel.TabIndex = 7;
-            fechaRespuestaLabel.Text = "Fecha Respuesta:";
             // 
             // fechaTransaccionLabel
             // 
@@ -140,15 +117,6 @@
             medioIdLabel.Size = new System.Drawing.Size(51, 13);
             medioIdLabel.TabIndex = 13;
             medioIdLabel.Text = "Medio Id:";
-            // 
-            // receptorLabel
-            // 
-            receptorLabel.AutoSize = true;
-            receptorLabel.Location = new System.Drawing.Point(12, 223);
-            receptorLabel.Name = "receptorLabel";
-            receptorLabel.Size = new System.Drawing.Size(54, 13);
-            receptorLabel.TabIndex = 15;
-            receptorLabel.Text = "Receptor:";
             // 
             // statusLabel
             // 
@@ -223,7 +191,7 @@
             this.listaTransaccionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaTransaccionBindingNavigator.Name = "listaTransaccionBindingNavigator";
             this.listaTransaccionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(650, 25);
+            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(806, 25);
             this.listaTransaccionBindingNavigator.TabIndex = 3;
             this.listaTransaccionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -239,7 +207,7 @@
             // 
             // listaTransaccionBindingSource
             // 
-            this.listaTransaccionBindingSource.DataSource = typeof(ManagerRequest.FormTipoTransaccion);
+            this.listaTransaccionBindingSource.DataSource = typeof(Denuncias.BL.Transaccion);
             // 
             // bindingNavigatorCountItem
             // 
@@ -335,27 +303,9 @@
             this.toolStripButtonCancelar.Size = new System.Drawing.Size(53, 22);
             this.toolStripButtonCancelar.Text = "Cancelar";
             // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaCiudadBindingSource, "CiudadNombre", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(297, 62);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.activoCheckBox.TabIndex = 4;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            this.activoCheckBox.Visible = false;
-            // 
             // listaCiudadBindingSource
             // 
             this.listaCiudadBindingSource.DataSource = typeof(Denuncias.BL.Ciudad);
-            // 
-            // fechaRespuestaDateTimePicker
-            // 
-            this.fechaRespuestaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaTransaccionBindingSource, "FechaRespuesta", true));
-            this.fechaRespuestaDateTimePicker.Location = new System.Drawing.Point(120, 188);
-            this.fechaRespuestaDateTimePicker.Name = "fechaRespuestaDateTimePicker";
-            this.fechaRespuestaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaRespuestaDateTimePicker.TabIndex = 8;
             // 
             // fechaTransaccionDateTimePicker
             // 
@@ -367,23 +317,14 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionBindingSource, "Id", true));
             this.idTextBox.Location = new System.Drawing.Point(120, 70);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(62, 20);
             this.idTextBox.TabIndex = 12;
             // 
-            // receptorTextBox
-            // 
-            this.receptorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionBindingSource, "Receptor", true));
-            this.receptorTextBox.Location = new System.Drawing.Point(120, 220);
-            this.receptorTextBox.Name = "receptorTextBox";
-            this.receptorTextBox.Size = new System.Drawing.Size(200, 20);
-            this.receptorTextBox.TabIndex = 16;
-            // 
             // statusTextBox
             // 
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionBindingSource, "status", true));
+            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionBindingSource, "Estatus", true));
             this.statusTextBox.Location = new System.Drawing.Point(120, 246);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(200, 20);
@@ -411,7 +352,8 @@
             // 
             // coloniaNombreComboBox
             // 
-            this.coloniaNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaColoniaBindingSource, "ColoniaNombre", true));
+            this.coloniaNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "ColoniaId", true));
+            this.coloniaNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaColoniaBindingSource, "ColoniaNombre", true));
             this.coloniaNombreComboBox.DataSource = this.listaColoniaBindingSource;
             this.coloniaNombreComboBox.DisplayMember = "ColoniaNombre";
             this.coloniaNombreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -420,11 +362,12 @@
             this.coloniaNombreComboBox.Name = "coloniaNombreComboBox";
             this.coloniaNombreComboBox.Size = new System.Drawing.Size(121, 21);
             this.coloniaNombreComboBox.TabIndex = 23;
-            this.coloniaNombreComboBox.ValueMember = "ColoniaNombre";
+            this.coloniaNombreComboBox.ValueMember = "Id";
             // 
             // ciudadNombreComboBox
             // 
-            this.ciudadNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaCiudadBindingSource, "CiudadNombre", true));
+            this.ciudadNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCiudadBindingSource, "CiudadNombre", true));
+            this.ciudadNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "CiudadId", true));
             this.ciudadNombreComboBox.DataSource = this.listaCiudadBindingSource;
             this.ciudadNombreComboBox.DisplayMember = "CiudadNombre";
             this.ciudadNombreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -433,7 +376,7 @@
             this.ciudadNombreComboBox.Name = "ciudadNombreComboBox";
             this.ciudadNombreComboBox.Size = new System.Drawing.Size(121, 21);
             this.ciudadNombreComboBox.TabIndex = 24;
-            this.ciudadNombreComboBox.ValueMember = "CiudadNombre";
+            this.ciudadNombreComboBox.ValueMember = "Id";
             // 
             // documentoBindingSource
             // 
@@ -445,16 +388,16 @@
             // 
             // listaAsuntosListBox
             // 
+            this.listaAsuntosListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "AsuntoId", true));
             this.listaAsuntosListBox.DataSource = this.listaAsuntosBindingSource;
             this.listaAsuntosListBox.DisplayMember = "Descripcion";
             this.listaAsuntosListBox.FormattingEnabled = true;
-            this.listaAsuntosListBox.Location = new System.Drawing.Point(20, 272);
+            this.listaAsuntosListBox.Location = new System.Drawing.Point(12, 294);
             this.listaAsuntosListBox.MultiColumn = true;
             this.listaAsuntosListBox.Name = "listaAsuntosListBox";
-            this.listaAsuntosListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listaAsuntosListBox.Size = new System.Drawing.Size(551, 69);
             this.listaAsuntosListBox.TabIndex = 24;
-            this.listaAsuntosListBox.ValueMember = "Activo";
+            this.listaAsuntosListBox.ValueMember = "Id";
             // 
             // listamedioBindingSource
             // 
@@ -462,6 +405,8 @@
             // 
             // listamedioComboBox
             // 
+            this.listamedioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "TipoMedioId", true));
+            this.listamedioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listamedioBindingSource, "Descripcion", true));
             this.listamedioComboBox.DataSource = this.listamedioBindingSource;
             this.listamedioComboBox.DisplayMember = "Descripcion";
             this.listamedioComboBox.FormattingEnabled = true;
@@ -469,30 +414,53 @@
             this.listamedioComboBox.Name = "listamedioComboBox";
             this.listamedioComboBox.Size = new System.Drawing.Size(200, 21);
             this.listamedioComboBox.TabIndex = 24;
-            this.listamedioComboBox.ValueMember = "Descripcion";
+            this.listamedioComboBox.ValueMember = "Id";
+            // 
+            // listasolicitantesBindingSource
+            // 
+            this.listasolicitantesBindingSource.DataSource = typeof(Denuncias.BL.TipoSolicitante);
+            // 
+            // listasolicitantesComboBox
+            // 
+            this.listasolicitantesComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "TipoSolicitanteId", true));
+            this.listasolicitantesComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listasolicitantesBindingSource, "Descripcion", true));
+            this.listasolicitantesComboBox.DataSource = this.listasolicitantesBindingSource;
+            this.listasolicitantesComboBox.DisplayMember = "Descripcion";
+            this.listasolicitantesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listasolicitantesComboBox.FormattingEnabled = true;
+            this.listasolicitantesComboBox.Location = new System.Drawing.Point(120, 214);
+            this.listasolicitantesComboBox.Name = "listasolicitantesComboBox";
+            this.listasolicitantesComboBox.Size = new System.Drawing.Size(200, 21);
+            this.listasolicitantesComboBox.TabIndex = 24;
+            this.listasolicitantesComboBox.ValueMember = "Id";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 217);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Tipo Solicitante:";
             // 
             // FormNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 362);
+            this.ClientSize = new System.Drawing.Size(806, 460);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listasolicitantesComboBox);
             this.Controls.Add(this.listamedioComboBox);
             this.Controls.Add(this.listaAsuntosListBox);
             this.Controls.Add(ciudadNombreLabel);
             this.Controls.Add(this.ciudadNombreComboBox);
             this.Controls.Add(coloniaNombreLabel);
             this.Controls.Add(this.coloniaNombreComboBox);
-            this.Controls.Add(activoLabel);
-            this.Controls.Add(this.activoCheckBox);
-            this.Controls.Add(fechaRespuestaLabel);
-            this.Controls.Add(this.fechaRespuestaDateTimePicker);
             this.Controls.Add(fechaTransaccionLabel);
             this.Controls.Add(this.fechaTransaccionDateTimePicker);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(medioIdLabel);
-            this.Controls.Add(receptorLabel);
-            this.Controls.Add(this.receptorTextBox);
             this.Controls.Add(statusLabel);
             this.Controls.Add(this.statusTextBox);
             this.Controls.Add(usuarioNombreLabel);
@@ -514,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listamedioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listasolicitantesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,7 +490,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource listaTransaccionBindingSource;
         private System.Windows.Forms.BindingNavigator listaTransaccionBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -535,11 +503,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton listaTransaccionBindingNavigatorSaveItem;
-        private System.Windows.Forms.CheckBox activoCheckBox;
-        private System.Windows.Forms.DateTimePicker fechaRespuestaDateTimePicker;
         private System.Windows.Forms.DateTimePicker fechaTransaccionDateTimePicker;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox receptorTextBox;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.TextBox usuarioNombreTextBox;
         private System.Windows.Forms.BindingSource listaAsuntosBindingSource;
@@ -554,5 +519,9 @@
         private System.Windows.Forms.ListBox listaAsuntosListBox;
         private System.Windows.Forms.BindingSource listamedioBindingSource;
         private System.Windows.Forms.ComboBox listamedioComboBox;
+        private System.Windows.Forms.BindingSource listaTransaccionBindingSource;
+        private System.Windows.Forms.BindingSource listasolicitantesBindingSource;
+        private System.Windows.Forms.ComboBox listasolicitantesComboBox;
+        private System.Windows.Forms.Label label2;
     }
 }

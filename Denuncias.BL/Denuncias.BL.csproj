@@ -64,12 +64,21 @@
     <Compile Include="TipoSolicitanteBL.cs" />
     <Compile Include="TransaccionBL.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AsuntosBL.datasource" />
+    <None Include="Properties\DataSources\CiudadBL.datasource" />
+    <None Include="Properties\DataSources\ColoniaBL.datasource" />
+    <None Include="Properties\DataSources\CompanyBL.datasource" />
+    <None Include="Properties\DataSources\DocumentosBL.datasource" />
+    <None Include="Properties\DataSources\EstatusBL.datasource" />
+    <None Include="Properties\DataSources\SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\TipodeDocumentoBL.datasource" />
+    <None Include="Properties\DataSources\TipoMedioBL.datasource" />
+    <None Include="Properties\DataSources\TipoSolicitanteBL.datasource" />
+    <None Include="Properties\DataSources\TransaccionBL.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
