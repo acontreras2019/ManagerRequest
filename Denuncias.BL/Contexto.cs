@@ -52,7 +52,8 @@ namespace Denuncias.BL
         public DbSet<TipodeDocumento> TipodeDocumento { get; set; }
         public DbSet<Ciudad> Ciudad { get; set; }
         public DbSet<Colonia> Colonia { get; set; }
-        
+        public DbSet<Estatus> Estatus { get; set; }
+
 
 
     }

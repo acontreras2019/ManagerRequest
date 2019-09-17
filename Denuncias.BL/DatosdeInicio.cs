@@ -112,10 +112,10 @@ namespace Denuncias.BL
             tipoMedios1.Descripcion = "Correspondencia";
             contexto.TipoMedio.Add(tipoMedios1);
 
-            //var tipoMedios2 = new TipoMedio();
-            //tipoMedios2.Id = 2;
-            //tipoMedios2.Descripcion = "Presencial";
-            //contexto.TipoMedio.Add(tipoMedios2);
+            var tipoMedios2 = new TipoMedio();
+            tipoMedios2.Id = 2;
+            tipoMedios2.Descripcion = "Presencial";
+            contexto.TipoMedio.Add(tipoMedios2);
 
             //var tipoMedios3 = new TipoMedio();
             //tipoMedios3.Id = 3;

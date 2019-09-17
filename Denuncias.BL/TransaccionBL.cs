@@ -83,7 +83,7 @@ namespace Denuncias.BL
 
     {
         public int Id { get; set; }
-        public String status { get; set; }
+        public string status { get; set; }
         public DateTime FechaTransaccion { get; set; }
         public string UsuarioNombre { get; set; }
         public int TipoUsuarioId { get; set; }
@@ -100,7 +100,9 @@ namespace Denuncias.BL
         public Transaccion()
         {
             FechaTransaccion = DateTime.Now;
-            Activo = true;
+            FechaRecibo = DateTime.Now;
+            FechaRespuesta = DateTime.Now;
+        Activo = true;
         }
     }
 
