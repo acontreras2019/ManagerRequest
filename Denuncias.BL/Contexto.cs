@@ -21,47 +21,56 @@ namespace Denuncias.BL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Ciudad>()
                 .HasRequired(f => f.Usuario)
-                .WithRequiredDependent()
+                .WithMany()
+                .HasForeignKey(e => e.UsuarioId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Company>()
-              .HasRequired(f => f.Ciudad)
-              .WithRequiredDependent()
-              .WillCascadeOnDelete(false);
+                .HasRequired(f => f.Ciudad)
+                .WithMany()
+                .HasForeignKey(e => e.CiudadId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Asunto>()
                 .HasRequired(f => f.Usuario)
-                .WithRequiredDependent()
+                .WithMany()
+                .HasForeignKey(e => e.UsuarioId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Transaccion>()
                 .HasRequired(f => f.Usuario)
-                .WithRequiredDependent()
+                .WithMany()
+                .HasForeignKey(e => e.UsuarioId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Transaccion>()
-               .HasRequired(f => f.TipoMedio)
-               .WithRequiredDependent()
-               .WillCascadeOnDelete(false);
+                .HasRequired(f => f.TipoMedio)
+                .WithMany()
+                .HasForeignKey(e => e.TipoMedioId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Transaccion>()
-               .HasRequired(f => f.TipoSolicitante)
-               .WithRequiredDependent()
-               .WillCascadeOnDelete(false);
+                .HasRequired(f => f.TipoSolicitante)
+                .WithMany()
+                .HasForeignKey(e => e.TipoSolicitanteId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Transaccion>()
-               .HasRequired(f => f.Ciudad)
-               .WithRequiredDependent()
-               .WillCascadeOnDelete(false);
+                .HasRequired(f => f.Ciudad)
+                .WithMany()
+                .HasForeignKey(e => e.CiudadId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Transaccion>()
-               .HasRequired(f => f.Colonia)
-               .WithRequiredDependent()
-               .WillCascadeOnDelete(false);
+                .HasRequired(f => f.Colonia)
+                .WithMany()
+                .HasForeignKey(e => e.ColoniaId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Transaccion>()
               .HasRequired(f => f.Asunto)
-              .WithRequiredDependent()
+              .WithMany()
+              .HasForeignKey(e => e.AsuntoId)
               .WillCascadeOnDelete(false);
 
             Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD

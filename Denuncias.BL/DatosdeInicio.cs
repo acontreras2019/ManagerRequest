@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
 namespace Denuncias.BL
 {
@@ -22,7 +17,6 @@ namespace Denuncias.BL
             SAC1.UsuarioNombre = "SAC1";
             SAC1.Contrasena = "123";
             contexto.Usuario.Add(SAC1);
-            base.Seed(contexto);
 
 
             #region ciudad
@@ -41,16 +35,7 @@ namespace Denuncias.BL
             ciudad2.Codigo = "512";
             ciudad2.UsuarioId = 1;
             contexto.Ciudad.Add(ciudad2);
-
-            //var ciudad3 = new Ciudad();
-            //ciudad3.Id = 3;
-            //ciudad3.CiudadNombre = "San Manuel";
-            //ciudad3.PaisNombre = "Honduras";
-            //ciudad3.Codigo = "513";
-            //ciudad3.UsuarioId = 1;
-            //contexto.Ciudad.Add(ciudad3);
-            #endregion
-            base.Seed(contexto);
+            #endregion            
 
             #region company
             var company1 = new Company();
@@ -58,8 +43,7 @@ namespace Denuncias.BL
             company1.Descripcion = "Municipalidad San Pedro Sula";
             company1.Telefono = "2550-0000";
             company1.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
-            company1.CiudadId = 1;
-
+            company1.Ciudad = ciudad1;
             contexto.Company.Add(company1);
 
             var company2 = new Company();
@@ -67,23 +51,14 @@ namespace Denuncias.BL
             company2.Descripcion = "Municipalidad La Lima";
             company2.Telefono = "264-0000";
             company2.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
-            company2.CiudadId = 2;
+            company2.Ciudad = ciudad2;
             contexto.Company.Add(company2);
-
-            //var company3 = new Company();
-            //company3.Id = 3;
-            //company3.Descripcion = "Municipalidad San Manuel";
-            //company3.Telefono = "647-0000";
-            //company3.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
-            //company3.CiudadId = 3;
-            //contexto.Company.Add(company3);
             #endregion
-            //base.Seed(contexto);
 
             #region Asuntos
             var asunto1 = new Asunto();
             asunto1.Id = 1;
-            asunto1.CompanyId = 1;
+            asunto1.Company = company1;
             asunto1.Descripcion = "Corte y Poda";
             asunto1.Activo = true;
             asunto1.UsuarioId = 1;
@@ -91,19 +66,12 @@ namespace Denuncias.BL
 
             var asunto2 = new Asunto();
             asunto2.Id = 2;
-            asunto2.CompanyId = 1;
+            asunto2.Company = company1;
             asunto2.Descripcion = "Instalación de Hidratante";
             asunto2.Activo = true;
             asunto2.UsuarioId = 1;
             contexto.Asunto.Add(asunto2);
 
-            //var asunto3 = new Asunto();
-            //asunto3.Id = 3;
-            //asunto3.CompanyId = 1;
-            //asunto3.Descripcion = "Veertedero Irregular";
-            //asunto3.Activo = true;
-            //asunto3.UsuarioId = 1;
-            //contexto.Asunto.Add(asunto3);
             #endregion
 
             #region Medios
@@ -116,16 +84,6 @@ namespace Denuncias.BL
             tipoMedios2.Id = 2;
             tipoMedios2.Descripcion = "Presencial";
             contexto.TipoMedio.Add(tipoMedios2);
-
-            //var tipoMedios3 = new TipoMedio();
-            //tipoMedios3.Id = 3;
-            //tipoMedios3.Descripcion = "Telefónico";
-            //contexto.TipoMedio.Add(tipoMedios3);
-
-            //var tipoMedios4 = new TipoMedio();
-            //tipoMedios4.Id = 4;
-            //tipoMedios4.Descripcion = "APP Móvil";
-            //contexto.TipoMedio.Add(tipoMedios4);
             #endregion
 
             //#region Colonias
@@ -135,20 +93,6 @@ namespace Denuncias.BL
             colonia1.Sector = "N.O.";
             colonia1.UsuarioId = 1;
             contexto.Colonia.Add(colonia1);
-
-            //var colonia2 = new Colonia();
-            //colonia2.Id = 2;
-            //colonia2.ColoniaNombre = "Bo. El Centro";
-            //colonia2.Sector = "S.O.";
-            //colonia2.UsuarioId = 2;
-            //contexto.Colonia.Add(colonia2);
-
-            //var colonia3 = new Colonia();
-            //colonia3.Id = 3;
-            //colonia3.ColoniaNombre = "Rivera Hernandez";
-            //colonia3.Sector = "Rivera Hernandez";
-            //colonia3.UsuarioId = 3;
-            //contexto.Colonia.Add(colonia3);
             //#endregion
 
             //#region TipoDocumento
@@ -162,6 +106,19 @@ namespace Denuncias.BL
             tipoSolicitante1.Descripcion = "Gubernamental";
             contexto.TipoSolicitante.Add(tipoSolicitante1);
             //#endregion
+
+            contexto.Estatus.Add(new Estatus
+            {
+                Descripcion = "Nueva"
+            });
+            contexto.Estatus.Add(new Estatus
+            {
+                Descripcion = "En Proceso"
+            });
+            contexto.Estatus.Add(new Estatus
+            {
+                Descripcion = "Terminada"
+            });
 
             base.Seed(contexto);
         }

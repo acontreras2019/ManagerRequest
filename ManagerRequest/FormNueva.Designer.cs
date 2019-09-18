@@ -39,10 +39,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNueva));
             this.label1 = new System.Windows.Forms.Label();
             this.listaTransaccionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.listaTransaccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -51,12 +49,13 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaTransaccionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripLabel();
             this.listaCiudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaTransaccionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
             this.usuarioNombreTextBox = new System.Windows.Forms.TextBox();
             this.listaAsuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listatipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -71,6 +70,8 @@
             this.listasolicitantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listasolicitantesComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listaEstatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             fechaTransaccionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             medioIdLabel = new System.Windows.Forms.Label();
@@ -89,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listamedioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listasolicitantesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaEstatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // fechaTransaccionLabel
@@ -121,7 +123,7 @@
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(12, 249);
+            statusLabel.Location = new System.Drawing.Point(23, 254);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new System.Drawing.Size(40, 13);
             statusLabel.TabIndex = 17;
@@ -166,10 +168,10 @@
             // 
             // listaTransaccionBindingNavigator
             // 
-            this.listaTransaccionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.listaTransaccionBindingNavigator.AddNewItem = null;
             this.listaTransaccionBindingNavigator.BindingSource = this.listaTransaccionBindingSource;
             this.listaTransaccionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaTransaccionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.listaTransaccionBindingNavigator.DeleteItem = null;
             this.listaTransaccionBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -191,19 +193,9 @@
             this.listaTransaccionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaTransaccionBindingNavigator.Name = "listaTransaccionBindingNavigator";
             this.listaTransaccionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(806, 25);
+            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(725, 25);
             this.listaTransaccionBindingNavigator.TabIndex = 3;
             this.listaTransaccionBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // listaTransaccionBindingSource
             // 
@@ -212,18 +204,9 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -285,6 +268,25 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
             // listaTransaccionBindingNavigatorSaveItem
             // 
             this.listaTransaccionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -317,18 +319,12 @@
             // 
             // idTextBox
             // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionBindingSource, "Id", true));
             this.idTextBox.Location = new System.Drawing.Point(120, 70);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(62, 20);
             this.idTextBox.TabIndex = 12;
-            // 
-            // statusTextBox
-            // 
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTransaccionBindingSource, "Estatus", true));
-            this.statusTextBox.Location = new System.Drawing.Point(120, 246);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(200, 20);
-            this.statusTextBox.TabIndex = 18;
             // 
             // usuarioNombreTextBox
             // 
@@ -353,7 +349,6 @@
             // coloniaNombreComboBox
             // 
             this.coloniaNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "ColoniaId", true));
-            this.coloniaNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaColoniaBindingSource, "ColoniaNombre", true));
             this.coloniaNombreComboBox.DataSource = this.listaColoniaBindingSource;
             this.coloniaNombreComboBox.DisplayMember = "ColoniaNombre";
             this.coloniaNombreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -366,7 +361,6 @@
             // 
             // ciudadNombreComboBox
             // 
-            this.ciudadNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCiudadBindingSource, "CiudadNombre", true));
             this.ciudadNombreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "CiudadId", true));
             this.ciudadNombreComboBox.DataSource = this.listaCiudadBindingSource;
             this.ciudadNombreComboBox.DisplayMember = "CiudadNombre";
@@ -406,9 +400,9 @@
             // listamedioComboBox
             // 
             this.listamedioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "TipoMedioId", true));
-            this.listamedioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listamedioBindingSource, "Descripcion", true));
             this.listamedioComboBox.DataSource = this.listamedioBindingSource;
             this.listamedioComboBox.DisplayMember = "Descripcion";
+            this.listamedioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listamedioComboBox.FormattingEnabled = true;
             this.listamedioComboBox.Location = new System.Drawing.Point(120, 126);
             this.listamedioComboBox.Name = "listamedioComboBox";
@@ -423,7 +417,6 @@
             // listasolicitantesComboBox
             // 
             this.listasolicitantesComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "TipoSolicitanteId", true));
-            this.listasolicitantesComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listasolicitantesBindingSource, "Descripcion", true));
             this.listasolicitantesComboBox.DataSource = this.listasolicitantesBindingSource;
             this.listasolicitantesComboBox.DisplayMember = "Descripcion";
             this.listasolicitantesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -443,11 +436,29 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Tipo Solicitante:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaTransaccionBindingSource, "EstatusId", true));
+            this.comboBox1.DataSource = this.listaEstatusBindingSource;
+            this.comboBox1.DisplayMember = "Descripcion";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(120, 246);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.ValueMember = "Id";
+            // 
+            // listaEstatusBindingSource
+            // 
+            this.listaEstatusBindingSource.DataSource = typeof(Denuncias.BL.Estatus);
+            // 
             // FormNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 460);
+            this.ClientSize = new System.Drawing.Size(725, 404);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listasolicitantesComboBox);
             this.Controls.Add(this.listamedioComboBox);
@@ -462,7 +473,6 @@
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(medioIdLabel);
             this.Controls.Add(statusLabel);
-            this.Controls.Add(this.statusTextBox);
             this.Controls.Add(usuarioNombreLabel);
             this.Controls.Add(this.usuarioNombreTextBox);
             this.Controls.Add(this.listaTransaccionBindingNavigator);
@@ -483,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listamedioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listasolicitantesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaEstatusBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +516,6 @@
         private System.Windows.Forms.ToolStripButton listaTransaccionBindingNavigatorSaveItem;
         private System.Windows.Forms.DateTimePicker fechaTransaccionDateTimePicker;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.TextBox usuarioNombreTextBox;
         private System.Windows.Forms.BindingSource listaAsuntosBindingSource;
         private System.Windows.Forms.BindingSource listatipoDocumentoBindingSource;
@@ -523,5 +533,7 @@
         private System.Windows.Forms.BindingSource listasolicitantesBindingSource;
         private System.Windows.Forms.ComboBox listasolicitantesComboBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource listaEstatusBindingSource;
     }
 }

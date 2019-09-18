@@ -20,6 +20,7 @@ namespace ManagerRequest
        TipodeDocumentoBL _tipodedocumentoBL;
         AsuntosBL _asuntoBL;
         TipoMedioBL _tipoMedioBL;
+        EstatusBL _estatusBL;
 
 
         public FormNueva()
@@ -47,6 +48,9 @@ namespace ManagerRequest
 
             _tiposolicitanteBL = new TipoSolicitanteBL();
             listasolicitantesBindingSource.DataSource = _tiposolicitanteBL.ObtenerSolicitantes();
+
+            _estatusBL = new EstatusBL();
+            listaEstatusBindingSource.DataSource = _estatusBL.ObtenerEstatus();
 
         }
 
@@ -126,16 +130,19 @@ namespace ManagerRequest
 
             var transaccion = (Transaccion)listaTransaccionBindingSource.Current;
             transaccion.Usuario = Program.usuario;
-            transaccion.Estatus = "nueva";
+
             var resultado = _transaccionBL.GuardarTransaccion(transaccion);
 
-            if (resultado == "Ok")
-
+            if (resultado == "OK")
             {
                 listaTransaccionBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+            } 
+            else
+            {
+                MessageBox.Show(resultado);
             }
-                }
+        }
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {

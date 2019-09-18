@@ -21,46 +21,43 @@ namespace Denuncias.BL
             _contexto = new Contexto();
             ListaTransaccion = new BindingList<Transaccion>();
         }
+
         public BindingList<Transaccion> ObtenerTransaccion()
         {
-            _contexto.Transaccion.Load();
+            _contexto.Transaccion
+                .Include("TipoMedio")
+                .Include("Ciudad")
+                .Include("Colonia")
+                .Include("TipoSolicitante")
+                .Include("Asunto")
+                .Include("Estatus")
+                .Include("Usuario").Load();
+
             ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
 
             return ListaTransaccion;
         }
-        //public BindingList<Transaccion> AgregarTransaccion()
-        //{
-        //    _contexto.Transaccion.Load();
-        //    ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
-
-        //    return ListaTransaccion;
-        //}
 
         public void AgregarTransacciom()
         {
             var nuevaTransaccion = new Transaccion();
-            ListaTransaccion.Add(nuevaTransaccion);
+            _contexto.Transaccion.Add(nuevaTransaccion);
         }
 
         public string GuardarTransaccion(Transaccion transaccion)
         {
-
             var vd = validarDatos(transaccion);
             if (vd == "OK")
             {
+                transaccion.UsuarioId = transaccion.Usuario.Id;
 
                 _contexto.SaveChanges();
-
-
-                return transaccion.Id.ToString();
             }
-            else
-            {
-                return vd;
-            }
+
+            return vd;
         }
-            
-             private string validarDatos(Transaccion a)
+
+        private string validarDatos(Transaccion a)
         {
             var validacion = "";
             if (!((a.Id) >= 0))
@@ -76,6 +73,11 @@ namespace Denuncias.BL
             //    validacion = validacion + " -- " + "Error en Usuario";
             //}
 
+            if (a.AsuntoId == 0)
+            {
+                validacion = validacion + " -- " + "Error en Asunto";
+            }
+
             if (validacion.Length == 0)
             {
                 validacion = "OK";
@@ -90,7 +92,6 @@ namespace Denuncias.BL
 
     {
         public int Id { get; set; }
-        
         public DateTime FechaTransaccion { get; set; }
         public string UsuarioNombre { get; set; }
         public int TipoSolicitanteId { get; set; }
@@ -101,8 +102,9 @@ namespace Denuncias.BL
         public Ciudad Ciudad { get; set; }
         public int ColoniaId { get; set; }
         public Colonia Colonia { get; set; }
-        public string UsuarioId { get; set; }
-        public string Estatus { get; set; }
+        public int EstatusId { get; set; }
+        public Estatus Estatus { get; set; }
+        public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
         public int AsuntoId { get; set; }
         public Asunto Asunto { get; set; }
@@ -111,8 +113,6 @@ namespace Denuncias.BL
         public Transaccion()
         {
             FechaTransaccion = DateTime.Now;
-           
-
         }
     }
 }
