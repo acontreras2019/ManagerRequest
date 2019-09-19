@@ -93,13 +93,12 @@ namespace ManagerRequest
             }
 
         }
+        
+
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
+            _ciudadBL.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
-            Eliminar(0);
         }
-
-
-
     }
 }

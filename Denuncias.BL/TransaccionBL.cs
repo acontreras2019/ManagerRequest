@@ -44,6 +44,15 @@ namespace Denuncias.BL
             _contexto.Transaccion.Add(nuevaTransaccion);
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+
         public string GuardarTransaccion(Transaccion transaccion)
         {
             var vd = validarDatos(transaccion);
@@ -65,6 +74,8 @@ namespace Denuncias.BL
                 validacion = "Error en Transaccion";
             }
 
+
+
             if (string.IsNullOrEmpty(a.UsuarioNombre))
             {
                 validacion = validacion + " -- " + "Error en Usuario Nombre";
@@ -85,9 +96,27 @@ namespace Denuncias.BL
             return validacion;
         }
 
+        public bool AnularTransaccion(int id)
 
-    
+        {
+            foreach (var transaccion in ListaTransaccion)
+            {
+                if (transaccion.Id == id)
+                {
+                    transaccion.AsuntoId = 0;
+
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+
     }
+
+   
+
     public class Transaccion
 
     {

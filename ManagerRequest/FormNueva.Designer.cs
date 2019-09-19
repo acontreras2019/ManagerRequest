@@ -199,13 +199,13 @@
             // 
             // listaTransaccionBindingSource
             // 
-            this.listaTransaccionBindingSource.DataSource = typeof(Denuncias.BL.Transaccion);
+           
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
@@ -286,6 +286,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listaTransaccionBindingNavigatorSaveItem
             // 
@@ -304,6 +305,7 @@
             this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
             this.toolStripButtonCancelar.Size = new System.Drawing.Size(53, 22);
             this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click_1);
             // 
             // listaCiudadBindingSource
             // 

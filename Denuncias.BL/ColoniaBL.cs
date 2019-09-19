@@ -26,6 +26,24 @@ namespace Denuncias.BL
 
             return ListaColonia;
         }
+
+             public string GuardarColonia(Colonia Colonia)
+        {
+
+            var vd = validarDatos(Colonia);
+            if (vd == "OK")
+            {
+
+                _contexto.SaveChanges();
+
+
+                return Colonia.Id.ToString();
+            }
+            else
+            {
+                return vd;
+            }
+        }
         private string validarDatos(Colonia a)
         {
             var validacion = "";
