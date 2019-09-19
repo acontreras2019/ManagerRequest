@@ -11,7 +11,7 @@ namespace Denuncias.BL
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("PortalDenunciaSolicitud")
+        public Contexto() : base("PortalDenunciaSolicitud31")
         {
 
         }

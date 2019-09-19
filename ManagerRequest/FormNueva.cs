@@ -181,5 +181,10 @@ namespace ManagerRequest
                 MessageBox.Show("Ocurrio un Problema al Anular la Transaccion");
             }
     }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
