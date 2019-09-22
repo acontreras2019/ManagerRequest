@@ -1,6 +1,8 @@
-﻿namespace ManagerRequest {
-    
-    
-    public partial class DataSet {
+﻿namespace ManagerRequest
+{
+
+
+    public partial class DataSet
+    {
     }
 }
