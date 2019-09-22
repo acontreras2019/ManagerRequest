@@ -36,12 +36,41 @@ namespace Denuncias.BL
             ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
 
             return ListaTransaccion;
+
+        }
+
+
+        public BindingList<Transaccion> ObtenerTransaccionPorEstatus(string status)
+        {
+            _contexto.Transaccion
+                .Include("TipoMedio")
+                .Include("Ciudad")
+                .Include("Colonia")
+                .Include("TipoSolicitante")
+                .Include("Asunto")
+                .Include("Estatus")
+                .Include("Usuario")
+                .Where(r => r.Estatus.Descripcion == status)
+                .Load();
+
+            ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
+
+            return ListaTransaccion;
         }
 
         public void AgregarTransacciom()
         {
             var nuevaTransaccion = new Transaccion();
             _contexto.Transaccion.Add(nuevaTransaccion);
+        }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
         }
 
         public string GuardarTransaccion(Transaccion transaccion)
@@ -65,6 +94,8 @@ namespace Denuncias.BL
                 validacion = "Error en Transaccion";
             }
 
+
+
             if (string.IsNullOrEmpty(a.UsuarioNombre))
             {
                 validacion = validacion + " -- " + "Error en Usuario Nombre";
@@ -85,9 +116,27 @@ namespace Denuncias.BL
             return validacion;
         }
 
+        public bool AnularTransaccion(int id)
 
-    
+        {
+            foreach (var transaccion in ListaTransaccion)
+            {
+                if (transaccion.Id == id)
+                {
+                    transaccion.AsuntoId = 0;
+
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+
     }
+
+   
+
     public class Transaccion
 
     {

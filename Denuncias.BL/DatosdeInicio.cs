@@ -35,6 +35,14 @@ namespace Denuncias.BL
             ciudad2.Codigo = "512";
             ciudad2.UsuarioId = 1;
             contexto.Ciudad.Add(ciudad2);
+
+            var ciudad3 = new Ciudad();
+            ciudad3.Id = 3;
+            ciudad3.CiudadNombre = "Chamelecon";
+            ciudad3.PaisNombre = "Honduras";
+            ciudad3.Codigo = "518";
+            ciudad3.UsuarioId = 1;
+            contexto.Ciudad.Add(ciudad3);
             #endregion            
 
             #region company
@@ -53,6 +61,14 @@ namespace Denuncias.BL
             company2.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
             company2.Ciudad = ciudad2;
             contexto.Company.Add(company2);
+
+            var company3 = new Company();
+            company3.Id = 3;
+            company3.Descripcion = "Municipalidad El Progreso";
+            company3.Telefono = "264-0000";
+            company3.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
+            company3.Ciudad = ciudad1;
+            contexto.Company.Add(company3);
             #endregion
 
             #region Asuntos
@@ -72,6 +88,14 @@ namespace Denuncias.BL
             asunto2.UsuarioId = 1;
             contexto.Asunto.Add(asunto2);
 
+            var asunto3 = new Asunto();
+            asunto3.Id = 3;
+            asunto3.Company = company1;
+            asunto3.Descripcion = "Fumigación";
+            asunto3.Activo = true;
+            asunto3.UsuarioId = 1;
+            contexto.Asunto.Add(asunto3);
+
             #endregion
 
             #region Medios
@@ -84,18 +108,37 @@ namespace Denuncias.BL
             tipoMedios2.Id = 2;
             tipoMedios2.Descripcion = "Presencial";
             contexto.TipoMedio.Add(tipoMedios2);
+
+            var tipoMedios3 = new TipoMedio();
+            tipoMedios3.Id = 2;
+            tipoMedios3.Descripcion = "Llamada";
+            contexto.TipoMedio.Add(tipoMedios3);
             #endregion
 
-            //#region Colonias
+            #region Colonias
             var colonia1 = new Colonia();
             colonia1.Id = 1;
             colonia1.ColoniaNombre = "Jardines del Valle";
             colonia1.Sector = "N.O.";
             colonia1.UsuarioId = 1;
             contexto.Colonia.Add(colonia1);
-            //#endregion
 
-            //#region TipoDocumento
+            var colonia2 = new Colonia();
+            colonia2.Id = 2;
+            colonia2.ColoniaNombre = "López Arellano";
+            colonia2.Sector = "N.O.";
+            colonia2.UsuarioId = 1;
+            contexto.Colonia.Add(colonia2);
+
+            var colonia3 = new Colonia();
+            colonia3.Id = 3;
+            colonia3.ColoniaNombre = "San Jose 5";
+            colonia3.Sector = "N.O.";
+            colonia3.UsuarioId = 1;
+            contexto.Colonia.Add(colonia3);
+            #endregion
+
+            #region TipoDocumento
             var tipoDocumento1 = new TipodeDocumento();
             tipoDocumento1.Id = 1;
             tipoDocumento1.Descripcion = "Solicitud";
@@ -105,7 +148,17 @@ namespace Denuncias.BL
             tipoSolicitante1.Id = 1;
             tipoSolicitante1.Descripcion = "Gubernamental";
             contexto.TipoSolicitante.Add(tipoSolicitante1);
-            //#endregion
+
+            var tipoSolicitante2 = new TipoSolicitante();
+            tipoSolicitante2.Id = 2;
+            tipoSolicitante2.Descripcion = "Civil";
+            contexto.TipoSolicitante.Add(tipoSolicitante2);
+
+            var tipoSolicitante3 = new TipoSolicitante();
+            tipoSolicitante3.Id = 3;
+            tipoSolicitante3.Descripcion = "ONG";
+            contexto.TipoSolicitante.Add(tipoSolicitante3);
+            #endregion
 
             contexto.Estatus.Add(new Estatus
             {

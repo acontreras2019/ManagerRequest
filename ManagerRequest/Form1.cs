@@ -60,5 +60,21 @@ namespace ManagerRequest
             formTipoTransaccion.MdiParent = this;
             formTipoTransaccion.Show();
         }
+
+        private void reporteDeSolicitudesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var formReporteAsunto = new FormReporteAsunto();
+            formReporteAsunto.MdiParent = this;
+            formReporteAsunto.Show();
+        }
+
+        private void reporteDeTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var formReporteTransaccion = new FormReporteTransaccion();
+            formReporteTransaccion.MdiParent = this;
+            formReporteTransaccion.Show();
+        }
     }
 }

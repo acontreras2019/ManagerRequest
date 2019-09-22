@@ -17,7 +17,7 @@ namespace ManagerRequest
         TransaccionBL _transaccionBL;
         ColoniaBL _coloniaBL;
         CiudadBL _ciudadBL;
-       TipodeDocumentoBL _tipodedocumentoBL;
+        TipodeDocumentoBL _tipodedocumentoBL;
         AsuntosBL _asuntoBL;
         TipoMedioBL _tipoMedioBL;
         EstatusBL _estatusBL;
@@ -137,7 +137,7 @@ namespace ManagerRequest
             {
                 listaTransaccionBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
-            } 
+            }
             else
             {
                 MessageBox.Show(resultado);
@@ -147,9 +147,44 @@ namespace ManagerRequest
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
             DeshabilitarHabilitarBotones(true);
-       
+
         }
 
+        private void toolStripButtonCancelar_Click_1(object sender, EventArgs e)
+        {
+            _transaccionBL.CancelarCambios();
+            DeshabilitarHabilitarBotones(true);
+        }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.Text != "")
+            {
+                var resultado = MessageBox.Show(" ¿Desea Anular Esta Transaccion?", "Anular", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    var id = Convert.ToInt32(idTextBox.Text);
+                    Anular(id);
+                }
+            }
+        }
+
+        private void Anular(int id)
+        {
+            var resultado = _transaccionBL.AnularTransaccion(id);
+            if (resultado == true)
+            {
+                listaTransaccionBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un Problema al Anular la Transaccion");
+            }
+    }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

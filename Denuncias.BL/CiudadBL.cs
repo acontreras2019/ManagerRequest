@@ -46,10 +46,21 @@ namespace Denuncias.BL
 
         }
 
+
+
         public void AgregarCiudad()
         {
             var nuevoCiudad = new Ciudad();
             ListaCiudad.Add(nuevoCiudad);
+        }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
         }
 
         public bool EliminarCiudad(int id)
@@ -66,7 +77,7 @@ namespace Denuncias.BL
 
             return false;
         }
-
+      
         private string validarDatos(Ciudad a)
         {
             var validacion = "";
@@ -91,6 +102,7 @@ namespace Denuncias.BL
             }
             return validacion;
         }
+     
     }
 
     public class Ciudad

@@ -26,6 +26,15 @@ namespace Denuncias.BL
             ListaAsuntos = _contexto.Asunto.Local.ToBindingList();
             return ListaAsuntos;
         }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
        
         public string GuardarAsunto(Asunto asunto){
 

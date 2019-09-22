@@ -100,8 +100,10 @@ namespace ManagerRequest
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
+            _asuntos.CancelarCambios();
          DeshabilitarHabilitarBotones(true);
-         Eliminar(0);
+         
+
        }
 
         private void listaAsuntosBindingSource_CurrentChanged(object sender, EventArgs e)
