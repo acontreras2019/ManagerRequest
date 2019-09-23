@@ -73,6 +73,19 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listaEstatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.dataSet = new ManagerRequest.DataSet();
+            this.asuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtfiltro = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.transaccionBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaTransaccionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.asuntosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             fechaTransaccionLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             medioIdLabel = new System.Windows.Forms.Label();
@@ -92,6 +105,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.listamedioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listasolicitantesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaEstatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asuntosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asuntosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // fechaTransaccionLabel
@@ -124,7 +142,7 @@
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(23, 254);
+            statusLabel.Location = new System.Drawing.Point(21, 228);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new System.Drawing.Size(40, 13);
             statusLabel.TabIndex = 17;
@@ -186,7 +204,9 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaTransaccionBindingNavigatorSaveItem,
-            this.toolStripButtonCancelar});
+            this.toolStripButtonCancelar,
+            this.txtfiltro,
+            this.toolStripButton1});
             this.listaTransaccionBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaTransaccionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaTransaccionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -194,7 +214,7 @@
             this.listaTransaccionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaTransaccionBindingNavigator.Name = "listaTransaccionBindingNavigator";
             this.listaTransaccionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(725, 42);
+            this.listaTransaccionBindingNavigator.Size = new System.Drawing.Size(714, 42);
             this.listaTransaccionBindingNavigator.TabIndex = 3;
             this.listaTransaccionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -401,10 +421,10 @@
             this.listaAsuntosListBox.DataSource = this.listaAsuntosBindingSource;
             this.listaAsuntosListBox.DisplayMember = "Descripcion";
             this.listaAsuntosListBox.FormattingEnabled = true;
-            this.listaAsuntosListBox.Location = new System.Drawing.Point(12, 294);
+            this.listaAsuntosListBox.Location = new System.Drawing.Point(448, 173);
             this.listaAsuntosListBox.MultiColumn = true;
             this.listaAsuntosListBox.Name = "listaAsuntosListBox";
-            this.listaAsuntosListBox.Size = new System.Drawing.Size(551, 69);
+            this.listaAsuntosListBox.Size = new System.Drawing.Size(202, 69);
             this.listaAsuntosListBox.TabIndex = 24;
             this.listaAsuntosListBox.ValueMember = "Id";
             // 
@@ -436,7 +456,7 @@
             this.listasolicitantesComboBox.DisplayMember = "Descripcion";
             this.listasolicitantesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listasolicitantesComboBox.FormattingEnabled = true;
-            this.listasolicitantesComboBox.Location = new System.Drawing.Point(120, 214);
+            this.listasolicitantesComboBox.Location = new System.Drawing.Point(118, 188);
             this.listasolicitantesComboBox.Name = "listasolicitantesComboBox";
             this.listasolicitantesComboBox.Size = new System.Drawing.Size(200, 21);
             this.listasolicitantesComboBox.TabIndex = 24;
@@ -445,7 +465,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 217);
+            this.label2.Location = new System.Drawing.Point(15, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 25;
@@ -458,7 +478,7 @@
             this.comboBox1.DisplayMember = "Descripcion";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(120, 246);
+            this.comboBox1.Location = new System.Drawing.Point(118, 220);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 26;
@@ -471,18 +491,106 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 278);
+            this.label3.Location = new System.Drawing.Point(381, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 27;
             this.label3.Text = "Asunto:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // asuntosBindingSource
+            // 
+            this.asuntosBindingSource.DataMember = "Asuntos";
+            this.asuntosBindingSource.DataSource = this.dataSet;
+            // 
+            // txtfiltro
+            // 
+            this.txtfiltro.Name = "txtfiltro";
+            this.txtfiltro.Size = new System.Drawing.Size(100, 42);
+            this.txtfiltro.Click += new System.EventHandler(this.txtfiltro_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(55, 39);
+            this.toolStripButton1.Text = "BUSCAR";
+            // 
+            // transaccionBLBindingSource
+            // 
+            this.transaccionBLBindingSource.DataSource = typeof(Denuncias.BL.TransaccionBL);
+            // 
+            // listaTransaccionBindingSource1
+            // 
+            this.listaTransaccionBindingSource1.DataMember = "ListaTransaccion";
+            this.listaTransaccionBindingSource1.DataSource = this.transaccionBLBindingSource;
+            // 
+            // asuntosDataGridView
+            // 
+            this.asuntosDataGridView.AutoGenerateColumns = false;
+            this.asuntosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.asuntosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.asuntosDataGridView.DataSource = this.asuntosBindingSource;
+            this.asuntosDataGridView.Location = new System.Drawing.Point(24, 270);
+            this.asuntosDataGridView.Name = "asuntosDataGridView";
+            this.asuntosDataGridView.Size = new System.Drawing.Size(637, 272);
+            this.asuntosDataGridView.TabIndex = 27;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Medio";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Medio";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Fecha";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Tipo";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Asunto";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Asunto";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
             // FormNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 404);
+            this.ClientSize = new System.Drawing.Size(714, 591);
+            this.Controls.Add(this.asuntosDataGridView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -520,6 +628,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.listamedioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listasolicitantesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaEstatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asuntosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaTransaccionBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asuntosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,5 +675,18 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource listaEstatusBindingSource;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripTextBox txtfiltro;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private DataSet dataSet;
+        private System.Windows.Forms.BindingSource asuntosBindingSource;
+        private System.Windows.Forms.BindingSource transaccionBLBindingSource;
+        private System.Windows.Forms.BindingSource listaTransaccionBindingSource1;
+        private System.Windows.Forms.DataGridView asuntosDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
