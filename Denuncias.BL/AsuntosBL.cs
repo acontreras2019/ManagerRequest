@@ -18,13 +18,22 @@ namespace Denuncias.BL
             ListaAsuntos = new BindingList<Asunto>();
            
         }
-
         public BindingList<Asunto> ObtenerAsuntos()
         {
 
             _contexto.Asunto.Load();
             ListaAsuntos = _contexto.Asunto.Local.ToBindingList();
             return ListaAsuntos;
+        }
+
+        public List<Asunto> ObtenerAsuntos(string buscar)
+        {
+
+           var resultado= _contexto.Asunto
+            .Where(a => a.Descripcion.ToLower().Contains(buscar.ToLower()) == true)
+            .ToList();
+
+            return resultado;
         }
 
         public void CancelarCambios()

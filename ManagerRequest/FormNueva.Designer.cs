@@ -53,6 +53,8 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaTransaccionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripLabel();
+            this.txtfiltro = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.listaCiudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaTransaccionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idTextBox = new System.Windows.Forms.TextBox();
@@ -75,8 +77,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataSet = new ManagerRequest.DataSet();
             this.asuntosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtfiltro = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.transaccionBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaTransaccionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.asuntosDataGridView = new System.Windows.Forms.DataGridView();
@@ -340,6 +340,23 @@
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click_1);
             // 
+            // txtfiltro
+            // 
+            this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfiltro.Name = "txtfiltro";
+            this.txtfiltro.Size = new System.Drawing.Size(100, 42);
+            this.txtfiltro.Click += new System.EventHandler(this.txtfiltro_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(55, 39);
+            this.toolStripButton1.Text = "BUSCAR";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // listaCiudadBindingSource
             // 
             this.listaCiudadBindingSource.DataSource = typeof(Denuncias.BL.Ciudad);
@@ -507,21 +524,6 @@
             // 
             this.asuntosBindingSource.DataMember = "Asuntos";
             this.asuntosBindingSource.DataSource = this.dataSet;
-            // 
-            // txtfiltro
-            // 
-            this.txtfiltro.Name = "txtfiltro";
-            this.txtfiltro.Size = new System.Drawing.Size(100, 42);
-            this.txtfiltro.Click += new System.EventHandler(this.txtfiltro_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(55, 39);
-            this.toolStripButton1.Text = "BUSCAR";
             // 
             // transaccionBLBindingSource
             // 

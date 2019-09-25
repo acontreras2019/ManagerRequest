@@ -28,7 +28,7 @@
                <PropertyUISetting Name="TransaccionBL.ListaTransaccion.Usuario">
                   <ControlSettings>
                      <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                        <BindableControlInfo Name="Details" Type="Microsoft.VSDesigner.Data.DataForm.Windows.DetailView" />
                      </ControlSetting>
                   </ControlSettings>
                </PropertyUISetting>

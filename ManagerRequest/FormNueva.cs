@@ -190,31 +190,48 @@ namespace ManagerRequest
 
         private void txtfiltro_Click(object sender, EventArgs e)
         {
-            asuntosDataGridView.CurrentCell = null;
-            if (txtfiltro.Text != "")
+            //asuntosDataGridView.CurrentCell = null;
+            //if (txtfiltro.Text != "")
+            //{
+            //    foreach (DataGridViewRow r in asuntosDataGridView.Rows)
+            //    {
+            //        r.Visible = false;
+            //    }
+            //    foreach (DataGridViewRow r in asuntosDataGridView.Rows)
+            //    {
+            //        foreach (DataGridViewCell c in r.Cells)
+            //        {
+            //            if ((c.Value.ToString().ToUpper()).IndexOf(txtfiltro.Text.ToUpper()) == 0)
+            //            {
+            //                r.Visible = true;
+            //                break;
+
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("No se encongr+o el Registro");
+            //            }
+
+            //        }
+            //    }
+            //}
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var buscar = txtfiltro.Text;
+            if (string.IsNullOrEmpty(buscar)==true)
             {
-                foreach (DataGridViewRow r in asuntosDataGridView.Rows)
-                {
-                    r.Visible = false;
-                }
-                foreach (DataGridViewRow r in asuntosDataGridView.Rows)
-                {
-                    foreach (DataGridViewCell c in r.Cells)
-                    {
-                        if ((c.Value.ToString().ToUpper()).IndexOf(txtfiltro.Text.ToUpper()) == 0)
-                        {
-                            r.Visible = true;
-                            break;
+                listaAsuntosBindingSource.DataSource =
+                    _asuntoBL.ObtenerAsuntos();
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encongr+o el Registro");
-                        }
-
-                    }
-                }
             }
+            else
+            {
+                listaAsuntosBindingSource.DataSource =
+                 _asuntoBL.ObtenerAsuntos(buscar);
+            }
+            listaAsuntosBindingSource.ResetBindings(false);
         }
     }
 }
