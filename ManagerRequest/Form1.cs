@@ -76,5 +76,12 @@ namespace ManagerRequest
             formReporteTransaccion.MdiParent = this;
             formReporteTransaccion.Show();
         }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var Formmantenimientousuarios = new Mantenimientousuarios();
+            Formmantenimientousuarios.MdiParent = this;
+            Formmantenimientousuarios.Show();
+        }
     }
 }

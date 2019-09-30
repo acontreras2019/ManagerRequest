@@ -12,30 +12,34 @@ namespace Denuncias.BL
 {
     public class SeguridadBL
     {
-        //public bool Autorizar(string usuario, string contraseña)
-        //{
-        //    if (usuario == "admin" && contraseña == "123")
-        //    {
-        //        return  true;
-        //    }
-        //    else
-        //    {
-        //        if (usuario == "user" && contraseña == "456")
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
+       
 
         Contexto _contexto = new Contexto();
-        public BindingList<Usuario> ListaUsuarios { get; set; }
+        public BindingList<Usuario> listaUsuarios { get; set; }
+
         public SeguridadBL()
         {
             _contexto = new Contexto();
-            ListaUsuarios = new BindingList<Usuario>();
+            listaUsuarios = new BindingList<Usuario>();
 
         }
+
+        public BindingList<Usuario> ObtenerUsuarios()
+        {
+            _contexto.Usuario.Load();
+
+            //.Include("Usuario").Load();
+    
+            listaUsuarios = _contexto.Usuario.Local.ToBindingList();
+            return listaUsuarios;
+        }
+        public void AgregarUsuario()
+        {
+           var nuevousuario = new Usuario();
+           _contexto.Usuario.Add(nuevousuario);
+        }
+
+
 
         public Usuario Autorizar(string usuario, string contraseña)
         {
@@ -55,13 +59,71 @@ namespace Denuncias.BL
             return null;
 
         }
+      
+       
+        private string validarDatos(Usuario u)
+        {
+            var validacion = "";
+            if (!((u.Id) >= 0))
+            {
+                validacion = "Error en Usuario";
+            }
+
+            if (string.IsNullOrEmpty(u.UsuarioNombre))
+            {
+                validacion = validacion + " -- " + "Error en Usuario Nombre";
+            }
+          
+
+            if (u.Id == 0)
+            {
+                validacion = validacion + " -- " + "Error en el Usuario";
+            }
+
+            if (validacion.Length == 0)
+            {
+                validacion = "OK";
+            }
+            return validacion;
         }
+        public Resultado GuardarUsuario(Usuario usuarion)
+        {
+            var resultado = Validar(usuarion);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+            resultado.Exitoso = true;
+            return resultado; 
+        }
+        private Resultado Validar (Usuario usuarion)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+             if (usuarion.UsuarioNombre == "")
+            {
+                resultado.Mensaje="Ingrese un nombre de usuario";
+                resultado.Exitoso = false;
+            }
+
+           
+            return resultado;
+        }
+      
+    }
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
+    }
+
 
         public class Usuario
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string UsuarioNombre { get; set; }
+        public string tipousuario { get; set; }
         public string Contrasena { get; set; }
     }
 }

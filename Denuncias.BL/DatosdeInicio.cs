@@ -9,13 +9,15 @@ namespace Denuncias.BL
             var usuarioAdmin = new Usuario();
             usuarioAdmin.Id = 1;
             usuarioAdmin.UsuarioNombre = "admin";
+            usuarioAdmin.tipousuario = "administrador";
             usuarioAdmin.Contrasena = "123";
             contexto.Usuario.Add(usuarioAdmin);
 
             var SAC1 = new Usuario();
             SAC1.Id = 2;
             SAC1.UsuarioNombre = "SAC1";
-            SAC1.Contrasena = "123";
+            SAC1.Contrasena = "456";
+            SAC1.tipousuario = "usuario";
             contexto.Usuario.Add(SAC1);
 
 
