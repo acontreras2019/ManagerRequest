@@ -26,7 +26,9 @@ namespace Denuncias.BL
 
         public BindingList<Usuario> ObtenerUsuarios()
         {
-            _contexto.Usuario.Load();
+            _contexto.Usuario
+                .Include("Rol")
+                .Load();
 
             //.Include("Usuario").Load();
     
@@ -48,10 +50,7 @@ namespace Denuncias.BL
             foreach (var usuarioDB in usuarios)
             {
                 if (usuario == usuarioDB.UsuarioNombre && contraseña == usuarioDB.Contrasena)
-                {
-                    
-                   
-        
+                {                   
                     return usuarioDB;
                 }
 
@@ -75,11 +74,10 @@ namespace Denuncias.BL
             }
           
 
-            if (u.Id == 0)
+            if (u.RolId == 0)
             {
-                validacion = validacion + " -- " + "Error en el Usuario";
+                validacion = validacion + " -- " + "Error en tipoUsuario";
             }
-
             if (validacion.Length == 0)
             {
                 validacion = "OK";
@@ -88,13 +86,18 @@ namespace Denuncias.BL
         }
         public Resultado GuardarUsuario(Usuario usuarion)
         {
-            var resultado = Validar(usuarion);
-            if (resultado.Exitoso == false)
+            Resultado res = new Resultado();
+            var resultado = validarDatos(usuarion);
+            res.Mensaje = resultado;
+            if (resultado != "OK")
             {
-                return resultado;
+                res.Exitoso = false;
+                
+                return res;
             }
-            resultado.Exitoso = true;
-            return resultado; 
+            res.Exitoso = true;
+            _contexto.SaveChanges();
+            return res; 
         }
         private Resultado Validar (Usuario usuarion)
         {
@@ -123,7 +126,8 @@ namespace Denuncias.BL
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string UsuarioNombre { get; set; }
-        public string tipousuario { get; set; }
         public string Contrasena { get; set; }
+        public int RolId { get; set; }
+        public Rol Rol { get; set; }
     }
 }

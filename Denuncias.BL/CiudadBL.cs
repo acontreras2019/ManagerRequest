@@ -115,7 +115,6 @@ namespace Denuncias.BL
         public Usuario Usuario { get; set; }
 
 
-
     }
 }
 

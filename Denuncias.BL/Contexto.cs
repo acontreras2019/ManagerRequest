@@ -11,7 +11,7 @@ namespace Denuncias.BL
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("PortalDenunciaSolicitud1851")
+        public Contexto() : base("PortalDenunciaSolicitud321")
         {
 
         }
@@ -19,6 +19,12 @@ namespace Denuncias.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Usuario>()
+                .HasRequired(f => f.Rol)
+                .WithMany()
+                .HasForeignKey(e => e.RolId)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Ciudad>()
                 .HasRequired(f => f.Usuario)
                 .WithMany()
@@ -73,7 +79,9 @@ namespace Denuncias.BL
               .HasForeignKey(e => e.AsuntoId)
               .WillCascadeOnDelete(false);
 
-            Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD
+
+
+          Database.SetInitializer(new DatosdeInicio()); // Agrega datos de inicio a la BD
 
         }
 
@@ -87,6 +95,7 @@ namespace Denuncias.BL
         public DbSet<Ciudad> Ciudad { get; set; }
         public DbSet<Colonia> Colonia { get; set; }
         public DbSet<Estatus> Estatus { get; set; }
+        public DbSet<Rol> Rol { get; set; }
 
 
 

@@ -16,6 +16,28 @@ namespace ManagerRequest
         {
             
             InitializeComponent();
+            List<string> opciones1 = new List<string>();
+            opciones1.Add("Transaccion");
+
+            List<string> opciones2 = new List<string>();
+            opciones1.Add("Transaccion");
+            opciones1.Add("Mantenimiento");
+             opciones1.Add("Reporte");
+
+            if(Program.usuario.RolId== 2)// si es usuario Servicio al Cliente
+            {
+                matenimientoToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
+                seguridadToolStripMenuItem.Visible = false;
+            }
+
+            if (Program.usuario.RolId == 3) // si es usuario de tipo Gerente
+            {
+                matenimientoToolStripMenuItem.Visible = false;
+                seguridadToolStripMenuItem.Visible = false;
+
+            }
+
         }
 
         private void TransaccionToolStripMenuItem_Click(object sender, EventArgs e)

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenimientousuarios));
             System.Windows.Forms.Label contrasenaLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label tipousuarioLabel;
             System.Windows.Forms.Label usuarioNombreLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenimientousuarios));
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -47,25 +47,64 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaUsuariosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.listaUsuariosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.listaUsuariosDataGridView = new System.Windows.Forms.DataGridView();
+            this.listaUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contrasenaTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.tipousuarioComboBox = new System.Windows.Forms.ComboBox();
             this.usuarioNombreTextBox = new System.Windows.Forms.TextBox();
-            this.listaUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listaRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaRolComboBox = new System.Windows.Forms.ComboBox();
+            this.listaUsuariosDataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             contrasenaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             tipousuarioLabel = new System.Windows.Forms.Label();
             usuarioNombreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingNavigator)).BeginInit();
             this.listaUsuariosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaRolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // contrasenaLabel
+            // 
+            contrasenaLabel.AutoSize = true;
+            contrasenaLabel.Location = new System.Drawing.Point(203, 86);
+            contrasenaLabel.Name = "contrasenaLabel";
+            contrasenaLabel.Size = new System.Drawing.Size(64, 13);
+            contrasenaLabel.TabIndex = 2;
+            contrasenaLabel.Text = "Contrasena:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(12, 45);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 4;
+            idLabel.Text = "Id:";
+            // 
+            // tipousuarioLabel
+            // 
+            tipousuarioLabel.AutoSize = true;
+            tipousuarioLabel.Location = new System.Drawing.Point(385, 83);
+            tipousuarioLabel.Name = "tipousuarioLabel";
+            tipousuarioLabel.Size = new System.Drawing.Size(70, 13);
+            tipousuarioLabel.TabIndex = 6;
+            tipousuarioLabel.Text = "Tipo Usuario:";
+            tipousuarioLabel.Click += new System.EventHandler(this.tipousuarioLabel_Click);
+            // 
+            // usuarioNombreLabel
+            // 
+            usuarioNombreLabel.AutoSize = true;
+            usuarioNombreLabel.Location = new System.Drawing.Point(41, 82);
+            usuarioNombreLabel.Name = "usuarioNombreLabel";
+            usuarioNombreLabel.Size = new System.Drawing.Size(43, 13);
+            usuarioNombreLabel.TabIndex = 8;
+            usuarioNombreLabel.Text = "Usuario";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -188,33 +227,14 @@
             this.listaUsuariosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaUsuariosBindingNavigator.Name = "listaUsuariosBindingNavigator";
             this.listaUsuariosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaUsuariosBindingNavigator.Size = new System.Drawing.Size(552, 25);
+            this.listaUsuariosBindingNavigator.Size = new System.Drawing.Size(498, 25);
             this.listaUsuariosBindingNavigator.TabIndex = 0;
             this.listaUsuariosBindingNavigator.Text = "bindingNavigator1";
+            this.listaUsuariosBindingNavigator.RefreshItems += new System.EventHandler(this.listaUsuariosBindingNavigator_RefreshItems);
             // 
-            // listaUsuariosDataGridView
+            // listaUsuariosBindingSource
             // 
-            this.listaUsuariosDataGridView.AutoGenerateColumns = false;
-            this.listaUsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaUsuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.listaUsuariosDataGridView.DataSource = this.listaUsuariosBindingSource;
-            this.listaUsuariosDataGridView.Location = new System.Drawing.Point(15, 177);
-            this.listaUsuariosDataGridView.Name = "listaUsuariosDataGridView";
-            this.listaUsuariosDataGridView.Size = new System.Drawing.Size(461, 220);
-            this.listaUsuariosDataGridView.TabIndex = 1;
-            // 
-            // contrasenaLabel
-            // 
-            contrasenaLabel.AutoSize = true;
-            contrasenaLabel.Location = new System.Drawing.Point(203, 86);
-            contrasenaLabel.Name = "contrasenaLabel";
-            contrasenaLabel.Size = new System.Drawing.Size(64, 13);
-            contrasenaLabel.TabIndex = 2;
-            contrasenaLabel.Text = "Contrasena:";
+            this.listaUsuariosBindingSource.DataSource = typeof(Denuncias.BL.Usuario);
             // 
             // contrasenaTextBox
             // 
@@ -223,15 +243,6 @@
             this.contrasenaTextBox.Name = "contrasenaTextBox";
             this.contrasenaTextBox.Size = new System.Drawing.Size(121, 20);
             this.contrasenaTextBox.TabIndex = 3;
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(12, 45);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 4;
-            idLabel.Text = "Id:";
             // 
             // idTextBox
             // 
@@ -242,36 +253,6 @@
             this.idTextBox.Size = new System.Drawing.Size(58, 20);
             this.idTextBox.TabIndex = 5;
             // 
-            // tipousuarioLabel
-            // 
-            tipousuarioLabel.AutoSize = true;
-            tipousuarioLabel.Location = new System.Drawing.Point(385, 83);
-            tipousuarioLabel.Name = "tipousuarioLabel";
-            tipousuarioLabel.Size = new System.Drawing.Size(61, 13);
-            tipousuarioLabel.TabIndex = 6;
-            tipousuarioLabel.Text = "tipousuario:";
-            // 
-            // tipousuarioComboBox
-            // 
-            this.tipousuarioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaUsuariosBindingSource, "tipousuario", true));
-            this.tipousuarioComboBox.FormattingEnabled = true;
-            this.tipousuarioComboBox.Items.AddRange(new object[] {
-            "administrador",
-            "usuario"});
-            this.tipousuarioComboBox.Location = new System.Drawing.Point(355, 102);
-            this.tipousuarioComboBox.Name = "tipousuarioComboBox";
-            this.tipousuarioComboBox.Size = new System.Drawing.Size(121, 21);
-            this.tipousuarioComboBox.TabIndex = 7;
-            // 
-            // usuarioNombreLabel
-            // 
-            usuarioNombreLabel.AutoSize = true;
-            usuarioNombreLabel.Location = new System.Drawing.Point(41, 82);
-            usuarioNombreLabel.Name = "usuarioNombreLabel";
-            usuarioNombreLabel.Size = new System.Drawing.Size(43, 13);
-            usuarioNombreLabel.TabIndex = 8;
-            usuarioNombreLabel.Text = "Usuario";
-            // 
             // usuarioNombreTextBox
             // 
             this.usuarioNombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaUsuariosBindingSource, "UsuarioNombre", true));
@@ -280,48 +261,75 @@
             this.usuarioNombreTextBox.Size = new System.Drawing.Size(121, 20);
             this.usuarioNombreTextBox.TabIndex = 9;
             // 
-            // listaUsuariosBindingSource
+            // listaRolBindingSource
             // 
-            this.listaUsuariosBindingSource.DataSource = typeof(Denuncias.BL.Usuario);
+            this.listaRolBindingSource.DataSource = typeof(Denuncias.BL.Rol);
             // 
-            // dataGridViewTextBoxColumn1
+            // listaRolComboBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.listaRolComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.listaUsuariosBindingSource, "RolId", true));
+            this.listaRolComboBox.DataSource = this.listaRolBindingSource;
+            this.listaRolComboBox.DisplayMember = "Descripcion";
+            this.listaRolComboBox.FormattingEnabled = true;
+            this.listaRolComboBox.Location = new System.Drawing.Point(352, 99);
+            this.listaRolComboBox.Name = "listaRolComboBox";
+            this.listaRolComboBox.Size = new System.Drawing.Size(124, 21);
+            this.listaRolComboBox.TabIndex = 10;
+            this.listaRolComboBox.ValueMember = "Id";
             // 
-            // dataGridViewTextBoxColumn2
+            // listaUsuariosDataGridView1
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "UsuarioNombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "UsuarioNombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.listaUsuariosDataGridView1.AutoGenerateColumns = false;
+            this.listaUsuariosDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaUsuariosDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.listaUsuariosDataGridView1.DataSource = this.listaUsuariosBindingSource;
+            this.listaUsuariosDataGridView1.Location = new System.Drawing.Point(15, 153);
+            this.listaUsuariosDataGridView1.Name = "listaUsuariosDataGridView1";
+            this.listaUsuariosDataGridView1.Size = new System.Drawing.Size(483, 220);
+            this.listaUsuariosDataGridView1.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "tipousuario";
-            this.dataGridViewTextBoxColumn3.HeaderText = "tipousuario";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Contrasena";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Contrasena";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "UsuarioNombre";
+            this.dataGridViewTextBoxColumn5.HeaderText = "UsuarioNombre";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Contrasena";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Contrasena";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "RolId";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tipo Usuario";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // Mantenimientousuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 423);
+            this.ClientSize = new System.Drawing.Size(498, 423);
+            this.Controls.Add(this.listaUsuariosDataGridView1);
+            this.Controls.Add(this.listaRolComboBox);
             this.Controls.Add(contrasenaLabel);
             this.Controls.Add(this.contrasenaTextBox);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(tipousuarioLabel);
-            this.Controls.Add(this.tipousuarioComboBox);
             this.Controls.Add(usuarioNombreLabel);
             this.Controls.Add(this.usuarioNombreTextBox);
-            this.Controls.Add(this.listaUsuariosDataGridView);
             this.Controls.Add(this.listaUsuariosBindingNavigator);
             this.Name = "Mantenimientousuarios";
             this.Text = "Mantenimientousuarios";
@@ -329,8 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingNavigator)).EndInit();
             this.listaUsuariosBindingNavigator.ResumeLayout(false);
             this.listaUsuariosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaRolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaUsuariosDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,14 +361,15 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton listaUsuariosBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingNavigator listaUsuariosBindingNavigator;
-        private System.Windows.Forms.DataGridView listaUsuariosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.TextBox contrasenaTextBox;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.ComboBox tipousuarioComboBox;
         private System.Windows.Forms.TextBox usuarioNombreTextBox;
+        private System.Windows.Forms.BindingSource listaRolBindingSource;
+        private System.Windows.Forms.ComboBox listaRolComboBox;
+        private System.Windows.Forms.DataGridView listaUsuariosDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

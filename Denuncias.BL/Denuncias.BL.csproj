@@ -57,6 +57,7 @@
     <Compile Include="Dbset.cs" />
     <Compile Include="DocumentosBL.cs" />
     <Compile Include="EstatusBL.cs" />
+    <Compile Include="RolBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipodeDocumentoBL.cs" />

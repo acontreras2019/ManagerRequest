@@ -91,15 +91,41 @@ namespace Denuncias.BL
             var validacion = "";
             if (!((a.Id) >= 0))
             {
-                validacion = "Error en Transaccion";
+                validacion = "Error en Transaccion \n";
             }
 
 
 
             if (string.IsNullOrEmpty(a.UsuarioNombre))
             {
-                validacion = validacion + " -- " + "Error en Usuario Nombre";
+                validacion = validacion + " -- " + "Error en Usuario Nombre\n";
             }
+
+            if (a.TipoMedioId==0)
+            {
+                validacion = validacion + " -- " + "Error en Tipo de Medio \n   ";
+            }
+
+            if (a.TipoSolicitanteId == 0)
+            {
+                validacion = validacion + " -- " + "Error en Tipo de Solicitante \n   ";
+            }
+
+            if (a.EstatusId == 0)
+            {
+                validacion = validacion + " -- " + "Error en Status \n   ";
+            }
+
+            if (a.CiudadId == 0)
+            {
+                validacion = validacion + " -- " + "Error en Ciudad \n   ";
+            }
+
+            if (a.ColoniaId == 0)
+            {
+                validacion = validacion + " -- " + "Error en Colonia \n   ";
+            }
+
             //if (!((a.UsuarioIdCreador)>0)) {
             //    validacion = validacion + " -- " + "Error en Usuario";
             //}

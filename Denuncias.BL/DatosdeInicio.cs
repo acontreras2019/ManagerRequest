@@ -6,19 +6,41 @@ namespace Denuncias.BL
     {
         protected override void Seed(Contexto contexto)
         {
+            var rolAdmin = new Rol();
+            rolAdmin.Id = 1;
+            rolAdmin.Descripcion = "Administrador";
+            contexto.Rol.Add(rolAdmin);
+
+            var rolAdmin2 = new Rol();
+            rolAdmin2.Id = 2;
+            rolAdmin2.Descripcion = "Servicio Al Cliente";
+            contexto.Rol.Add(rolAdmin2);
+
+            var rolGerente = new Rol();
+            rolGerente.Id = 3;
+            rolGerente.Descripcion = "Gerente";
+            contexto.Rol.Add(rolGerente);
+
             var usuarioAdmin = new Usuario();
             usuarioAdmin.Id = 1;
             usuarioAdmin.UsuarioNombre = "admin";
-            usuarioAdmin.tipousuario = "administrador";
             usuarioAdmin.Contrasena = "123";
+            usuarioAdmin.RolId = 1;
             contexto.Usuario.Add(usuarioAdmin);
 
             var SAC1 = new Usuario();
             SAC1.Id = 2;
             SAC1.UsuarioNombre = "SAC1";
             SAC1.Contrasena = "456";
-            SAC1.tipousuario = "usuario";
+            SAC1.RolId = 2;
             contexto.Usuario.Add(SAC1);
+
+            var gCanales = new Usuario();
+            gCanales.Id = 3;
+            gCanales.UsuarioNombre = "gCanales";
+            gCanales.Contrasena = "123";
+            gCanales.RolId = 3;
+            contexto.Usuario.Add(gCanales);
 
 
             #region ciudad

@@ -204,6 +204,7 @@
     <None Include="Properties\DataSources\Denuncias.BL.Documento.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.DocumentosBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.EstatusBL.datasource" />
+    <None Include="Properties\DataSources\Denuncias.BL.RolBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.SeguridadBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.TipodeDocumentoBL.datasource" />
     <None Include="Properties\DataSources\Denuncias.BL.TipoMedioBL.datasource" />

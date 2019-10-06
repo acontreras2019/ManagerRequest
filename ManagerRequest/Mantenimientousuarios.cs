@@ -14,6 +14,7 @@ namespace ManagerRequest
     public partial class Mantenimientousuarios : Form
     {
         SeguridadBL _seguridadBL;
+        RolBL _rolBL;
 
         public Mantenimientousuarios()
         {
@@ -21,6 +22,9 @@ namespace ManagerRequest
 
             _seguridadBL = new SeguridadBL();
             listaUsuariosBindingSource.DataSource = _seguridadBL.ObtenerUsuarios();
+
+            _rolBL = new RolBL();
+            listaRolBindingSource.DataSource = _rolBL.ObtenerRol();
         }
 
         private void usuarioNombreLabel_Click(object sender, EventArgs e)
@@ -69,6 +73,16 @@ namespace ManagerRequest
         }
 
         private void Mantenimientousuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaUsuariosBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tipousuarioLabel_Click(object sender, EventArgs e)
         {
 
         }
