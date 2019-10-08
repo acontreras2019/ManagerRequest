@@ -41,9 +41,11 @@
             // 
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.crystalReportViewer1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 95);
+            this.groupBox1.Location = new System.Drawing.Point(18, 146);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 439);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1318, 675);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "-------";
@@ -54,21 +56,21 @@
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 16);
-            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(2);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(4, 24);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(873, 420);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1310, 646);
             this.crystalReportViewer1.TabIndex = 1;
-            this.crystalReportViewer1.ToolPanelWidth = 133;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(15, 2);
+            this.groupBox2.Location = new System.Drawing.Point(22, 3);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(276, 87);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(414, 134);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro";
@@ -76,9 +78,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(154, 23);
+            this.button1.Location = new System.Drawing.Point(231, 35);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 31);
+            this.button1.Size = new System.Drawing.Size(134, 48);
             this.button1.TabIndex = 1;
             this.button1.Text = "Cargar";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,20 +96,22 @@
             "Nueva",
             "En Proceso",
             "Terminada"});
-            this.comboBox1.Location = new System.Drawing.Point(7, 29);
+            this.comboBox1.Location = new System.Drawing.Point(10, 45);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(180, 28);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FormReporteAsunto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(943, 552);
+            this.ClientSize = new System.Drawing.Size(1016, 612);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormReporteAsunto";
             this.Text = "Reporte de Asunto";
             this.Load += new System.EventHandler(this.FormReporteAsunto_Load);
