@@ -33,7 +33,6 @@
             this.transaccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificacionDeAsuntosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ciudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +40,6 @@
             this.reporteDeTransaccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -71,33 +69,25 @@
             this.transaccionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaToolStripMenuItem});
             this.transaccionToolStripMenuItem.Name = "transaccionToolStripMenuItem";
-            this.transaccionToolStripMenuItem.Size = new System.Drawing.Size(131, 29);
-            this.transaccionToolStripMenuItem.Text = "Transacciones";
+            this.transaccionToolStripMenuItem.Size = new System.Drawing.Size(109, 29);
+            this.transaccionToolStripMenuItem.Text = "Solicitudes";
             this.transaccionToolStripMenuItem.Click += new System.EventHandler(this.TransaccionToolStripMenuItem_Click);
             // 
             // nuevaToolStripMenuItem
             // 
             this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
-            this.nuevaToolStripMenuItem.Text = "Nueva";
+            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.nuevaToolStripMenuItem.Text = "Nueva Soloicitud";
             this.nuevaToolStripMenuItem.Click += new System.EventHandler(this.NuevaToolStripMenuItem_Click);
             // 
             // matenimientoToolStripMenuItem
             // 
             this.matenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem,
             this.clasificacionDeAsuntosToolStripMenuItem,
             this.ciudadesToolStripMenuItem});
             this.matenimientoToolStripMenuItem.Name = "matenimientoToolStripMenuItem";
             this.matenimientoToolStripMenuItem.Size = new System.Drawing.Size(134, 29);
             this.matenimientoToolStripMenuItem.Text = "Matenimiento";
-            // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(287, 30);
-            this.usuariosToolStripMenuItem.Text = "Tipos de Documento";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
             // 
             // clasificacionDeAsuntosToolStripMenuItem
             // 
@@ -139,8 +129,7 @@
             // seguridadToolStripMenuItem
             // 
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem1,
-            this.mantenimientoDeUsuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem1});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
@@ -148,15 +137,9 @@
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(314, 30);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(210, 30);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
-            // 
-            // mantenimientoDeUsuariosToolStripMenuItem
-            // 
-            this.mantenimientoDeUsuariosToolStripMenuItem.Name = "mantenimientoDeUsuariosToolStripMenuItem";
-            this.mantenimientoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(314, 30);
-            this.mantenimientoDeUsuariosToolStripMenuItem.Text = "Mantenimiento de Usuarios";
             // 
             // perfilToolStripMenuItem
             // 
@@ -223,7 +206,6 @@
         private System.Windows.Forms.ToolStripMenuItem transaccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matenimientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clasificacionDeAsuntosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeSolicitudesToolStripMenuItem;
@@ -233,7 +215,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem ciudadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeTransaccionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarUsuarioToolStripMenuItem;
     }

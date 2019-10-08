@@ -51,23 +51,24 @@ namespace Denuncias.BL
             ciudad1.Codigo = "504";
             ciudad1.UsuarioId = 1;
             contexto.Ciudad.Add(ciudad1);
-
-            var ciudad2 = new Ciudad();
-            ciudad2.Id = 2;
-            ciudad2.CiudadNombre = "La Lima";
-            ciudad2.PaisNombre = "Honduras";
-            ciudad2.Codigo = "512";
-            ciudad2.UsuarioId = 1;
-            contexto.Ciudad.Add(ciudad2);
-
-            var ciudad3 = new Ciudad();
-            ciudad3.Id = 3;
-            ciudad3.CiudadNombre = "Chamelecon";
-            ciudad3.PaisNombre = "Honduras";
-            ciudad3.Codigo = "518";
-            ciudad3.UsuarioId = 1;
-            contexto.Ciudad.Add(ciudad3);
             #endregion            
+
+            //var ciudad2 = new Ciudad();
+            //ciudad2.Id = 2;
+            //ciudad2.CiudadNombre = "La Lima";
+            //ciudad2.PaisNombre = "Honduras";
+            //ciudad2.Codigo = "512";
+            //ciudad2.UsuarioId = 1;
+            //contexto.Ciudad.Add(ciudad2);
+
+            //var ciudad3 = new Ciudad();
+            //ciudad3.Id = 3;
+            //ciudad3.CiudadNombre = "Chamelecon";
+            //ciudad3.PaisNombre = "Honduras";
+            //ciudad3.Codigo = "518";
+            //ciudad3.UsuarioId = 1;
+            //contexto.Ciudad.Add(ciudad3);
+            //#endregion            
 
             #region company
             var company1 = new Company();
@@ -77,23 +78,24 @@ namespace Denuncias.BL
             company1.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
             company1.Ciudad = ciudad1;
             contexto.Company.Add(company1);
+            #endregion            
 
-            var company2 = new Company();
-            company2.Id = 2;
-            company2.Descripcion = "Municipalidad La Lima";
-            company2.Telefono = "264-0000";
-            company2.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
-            company2.Ciudad = ciudad2;
-            contexto.Company.Add(company2);
+            //var company2 = new Company();
+            //company2.Id = 2;
+            //company2.Descripcion = "Municipalidad La Lima";
+            //company2.Telefono = "264-0000";
+            //company2.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
+            //company2.Ciudad = ciudad2;
+            //contexto.Company.Add(company2);
 
-            var company3 = new Company();
-            company3.Id = 3;
-            company3.Descripcion = "Municipalidad El Progreso";
-            company3.Telefono = "264-0000";
-            company3.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
-            company3.Ciudad = ciudad1;
-            contexto.Company.Add(company3);
-            #endregion
+            //var company3 = new Company();
+            //company3.Id = 3;
+            //company3.Descripcion = "Municipalidad El Progreso";
+            //company3.Telefono = "264-0000";
+            //company3.Direccion = "Bo. EL Centro, 1 cll, 3-4 avenida";
+            //company3.Ciudad = ciudad1;
+            //contexto.Company.Add(company3);
+            //#endregion
 
             #region Asuntos
             var asunto1 = new Asunto();

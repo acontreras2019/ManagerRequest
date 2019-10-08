@@ -130,7 +130,7 @@ namespace ManagerRequest
 
             var transaccion = (Transaccion)listaTransaccionBindingSource.Current;
             transaccion.Usuario = Program.usuario;
-            transaccion.EstatusId = 1; // estado Nueva
+            //transaccion.EstatusId = 1; // estado Nueva
 
             var resultado = _transaccionBL.GuardarTransaccion(transaccion);
 
