@@ -16,7 +16,7 @@ namespace ManagerRequest
         public FormReporteAsunto()
         {
             InitializeComponent();
-
+            comboBox1.Text = "Todas";
             //var _asuntosBL = new AsuntosBL();
             //var bindingSourse = new BindingSource();
             //bindingSourse.DataSource = _asuntosBL.ObtenerAsuntos();
@@ -41,7 +41,13 @@ namespace ManagerRequest
             var lista = new List<ModeloReporteAsuntos>();
 
             var transaccionBL = new TransaccionBL();
-            var transacciones = transaccionBL.ObtenerTransaccionPorEstatus(comboBox1.Text);
+            var transacciones = new BindingList<Transaccion>();
+            if (comboBox1.Text == "Todas")
+            {
+                transacciones = transaccionBL.ObtenerTransaccion();
+
+            }
+            else { transacciones = transaccionBL.ObtenerTransaccionPorEstatus(comboBox1.Text); }
 
             foreach (var transaccion in transacciones)
             {
@@ -90,6 +96,11 @@ namespace ManagerRequest
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

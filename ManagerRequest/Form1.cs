@@ -105,5 +105,13 @@ namespace ManagerRequest
             Formmantenimientousuarios.MdiParent = this;
             Formmantenimientousuarios.Show();
         }
+
+        private void cambiarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var formlogin = new FormLogin();
+            formlogin.Closed += (s, args) => this.Close();
+            formlogin.Show();
+        }
     }
 }
