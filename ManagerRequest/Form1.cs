@@ -113,5 +113,13 @@ namespace ManagerRequest
             formlogin.Closed += (s, args) => this.Close();
             formlogin.Show();
         }
+
+        private void barriosYColoniasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var FormBarriosyColonia = new FormBarriosyColonias();
+            FormBarriosyColonia.MdiParent = this;
+            FormBarriosyColonia.Show();
+
+        }
     }
 }

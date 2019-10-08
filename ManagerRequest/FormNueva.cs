@@ -223,16 +223,13 @@ namespace ManagerRequest
             var buscar = txtfiltro.Text;
             if (string.IsNullOrEmpty(buscar)==true)
             {
-                listaAsuntosBindingSource.DataSource =
-                    _asuntoBL.ObtenerAsuntos();
-
+                listaTransaccionBindingSource.DataSource = _transaccionBL.ObtenerTransaccion();
             }
             else
             {
-                listaAsuntosBindingSource.DataSource =
-                 _asuntoBL.ObtenerAsuntos(buscar);
+                listaTransaccionBindingSource.DataSource = _transaccionBL.ObtenerTransaccion(buscar);
             }
-            listaAsuntosBindingSource.ResetBindings(false);
+            listaTransaccionBindingSource.ResetBindings(false);
         }
     }
 }

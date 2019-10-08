@@ -44,6 +44,7 @@
             this.cambiarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.barriosYColoniasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +85,8 @@
             // 
             this.matenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clasificacionDeAsuntosToolStripMenuItem,
-            this.ciudadesToolStripMenuItem});
+            this.ciudadesToolStripMenuItem,
+            this.barriosYColoniasToolStripMenuItem});
             this.matenimientoToolStripMenuItem.Name = "matenimientoToolStripMenuItem";
             this.matenimientoToolStripMenuItem.Size = new System.Drawing.Size(134, 29);
             this.matenimientoToolStripMenuItem.Text = "Matenimiento";
@@ -137,7 +139,7 @@
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(210, 30);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(164, 30);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
@@ -172,6 +174,13 @@
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // barriosYColoniasToolStripMenuItem
+            // 
+            this.barriosYColoniasToolStripMenuItem.Name = "barriosYColoniasToolStripMenuItem";
+            this.barriosYColoniasToolStripMenuItem.Size = new System.Drawing.Size(287, 30);
+            this.barriosYColoniasToolStripMenuItem.Text = "Barrios y Colonias";
+            this.barriosYColoniasToolStripMenuItem.Click += new System.EventHandler(this.barriosYColoniasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -217,6 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDeTransaccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem barriosYColoniasToolStripMenuItem;
     }
 }
 

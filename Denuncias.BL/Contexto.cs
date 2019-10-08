@@ -11,7 +11,7 @@ namespace Denuncias.BL
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("PortalDenunciaSolicitud321")
+        public Contexto() : base("Denuncias")
         {
 
         }
@@ -26,6 +26,12 @@ namespace Denuncias.BL
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Ciudad>()
+                .HasRequired(f => f.Usuario)
+                .WithMany()
+                .HasForeignKey(e => e.UsuarioId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Colonia>()
                 .HasRequired(f => f.Usuario)
                 .WithMany()
                 .HasForeignKey(e => e.UsuarioId)

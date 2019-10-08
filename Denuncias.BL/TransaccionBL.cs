@@ -36,9 +36,26 @@ namespace Denuncias.BL
             ListaTransaccion = _contexto.Transaccion.Local.ToBindingList();
 
             return ListaTransaccion;
-
         }
 
+
+        public BindingList<Transaccion> ObtenerTransaccion(string buscar)
+        {
+            var resultado = _contexto.Transaccion
+                .Include("TipoMedio")
+                .Include("Ciudad")
+                .Include("Colonia")
+                .Include("TipoSolicitante")
+                .Include("Asunto")
+                .Include("Estatus")
+                .Include("Usuario")
+                .Where(r => r.UsuarioNombre.ToLower().Contains(buscar.ToLower()))
+                .ToList();
+
+            ListaTransaccion = new BindingList<Transaccion>(resultado);
+
+            return ListaTransaccion;
+        }
 
         public BindingList<Transaccion> ObtenerTransaccionPorEstatus(string status)
         {
