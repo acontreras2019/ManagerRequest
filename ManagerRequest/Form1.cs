@@ -94,7 +94,7 @@ namespace ManagerRequest
         private void reporteDeTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var formReporteTransaccion = new FormReporteTransaccion();
+            var formReporteTransaccion = new FormReporteTipoDeAsunto();
             formReporteTransaccion.MdiParent = this;
             formReporteTransaccion.Show();
         }

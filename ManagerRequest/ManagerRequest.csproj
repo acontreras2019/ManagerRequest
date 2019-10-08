@@ -69,6 +69,12 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSet.cs">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
@@ -76,6 +82,11 @@
       <DependentUpon>DataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -113,11 +124,11 @@
     <Compile Include="FormReporteAsunto.Designer.cs">
       <DependentUpon>FormReporteAsunto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporteTransaccion.cs">
+    <Compile Include="FormReporteTipoDeAsunto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReporteTransaccion.Designer.cs">
-      <DependentUpon>FormReporteTransaccion.cs</DependentUpon>
+    <Compile Include="FormReporteTipoDeAsunto.Designer.cs">
+      <DependentUpon>FormReporteTipoDeAsunto.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenieminto Tipo de Transaccion.cs">
       <SubType>Form</SubType>
@@ -143,6 +154,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,8 +176,8 @@
     <EmbeddedResource Include="FormReporteAsunto.resx">
       <DependentUpon>FormReporteAsunto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteTransaccion.resx">
-      <DependentUpon>FormReporteTransaccion.cs</DependentUpon>
+    <EmbeddedResource Include="FormReporteTipoDeAsunto.resx">
+      <DependentUpon>FormReporteTipoDeAsunto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenieminto Tipo de Transaccion.resx">
       <DependentUpon>Mantenieminto Tipo de Transaccion.cs</DependentUpon>
@@ -194,6 +209,17 @@
     </None>
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Denuncias.BL.Asunto.datasource" />
@@ -234,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smartcity.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

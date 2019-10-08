@@ -34,5 +34,17 @@ namespace ManagerRequest.Properties {
                 return ((string)(this["PortalDenunciaSolicitud67ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PortalDenunciaSolicitud321;Int" +
+            "egrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=Tr" +
+            "ue")]
+        public string PortalDenunciaSolicitud321ConnectionString {
+            get {
+                return ((string)(this["PortalDenunciaSolicitud321ConnectionString"]));
+            }
+        }
     }
 }
