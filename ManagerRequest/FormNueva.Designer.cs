@@ -622,6 +622,7 @@
             this.tipoSolicitanteDataGridViewTextBoxColumn.DataPropertyName = "TipoSolicitante";
             this.tipoSolicitanteDataGridViewTextBoxColumn.HeaderText = "TipoSolicitante";
             this.tipoSolicitanteDataGridViewTextBoxColumn.Name = "tipoSolicitanteDataGridViewTextBoxColumn";
+            this.tipoSolicitanteDataGridViewTextBoxColumn.Visible = false;
             // 
             // tipoMedioIdDataGridViewTextBoxColumn
             // 
@@ -634,6 +635,7 @@
             this.tipoMedioDataGridViewTextBoxColumn.DataPropertyName = "TipoMedio";
             this.tipoMedioDataGridViewTextBoxColumn.HeaderText = "TipoMedio";
             this.tipoMedioDataGridViewTextBoxColumn.Name = "tipoMedioDataGridViewTextBoxColumn";
+            this.tipoMedioDataGridViewTextBoxColumn.Visible = false;
             // 
             // ciudadIdDataGridViewTextBoxColumn
             // 
@@ -646,6 +648,7 @@
             this.ciudadDataGridViewTextBoxColumn.DataPropertyName = "Ciudad";
             this.ciudadDataGridViewTextBoxColumn.HeaderText = "Ciudad";
             this.ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
+            this.ciudadDataGridViewTextBoxColumn.Visible = false;
             // 
             // coloniaIdDataGridViewTextBoxColumn
             // 
@@ -658,6 +661,7 @@
             this.coloniaDataGridViewTextBoxColumn.DataPropertyName = "Colonia";
             this.coloniaDataGridViewTextBoxColumn.HeaderText = "Colonia";
             this.coloniaDataGridViewTextBoxColumn.Name = "coloniaDataGridViewTextBoxColumn";
+            this.coloniaDataGridViewTextBoxColumn.Visible = false;
             // 
             // estatusIdDataGridViewTextBoxColumn
             // 
@@ -670,6 +674,7 @@
             this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
             this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
             this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.Visible = false;
             // 
             // usuarioIdDataGridViewTextBoxColumn
             // 
@@ -682,6 +687,7 @@
             this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.Visible = false;
             // 
             // asuntoIdDataGridViewTextBoxColumn
             // 
@@ -694,6 +700,7 @@
             this.asuntoDataGridViewTextBoxColumn.DataPropertyName = "Asunto";
             this.asuntoDataGridViewTextBoxColumn.HeaderText = "Asunto";
             this.asuntoDataGridViewTextBoxColumn.Name = "asuntoDataGridViewTextBoxColumn";
+            this.asuntoDataGridViewTextBoxColumn.Visible = false;
             // 
             // FormNueva
             // 

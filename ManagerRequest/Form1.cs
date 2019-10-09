@@ -121,5 +121,19 @@ namespace ManagerRequest
             FormBarriosyColonia.Show();
 
         }
+
+        private void informacionDelProgramaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Mannager Request: Version 1.0");
+        }
+
+        private void creadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            var FormFoto = new FormFoto();
+            FormFoto.MdiParent = this;
+            FormFoto.Show();
+        }
     }
 }

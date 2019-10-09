@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerRequest", "ManagerRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Denuncias.BL", "Denuncias.BL\Denuncias.BL.csproj", "{95813540-EBA1-4393-9A08-02BB20CC03B5}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ManagerRequestInstaller", "ManagerRequestInstaller\ManagerRequestInstaller.vdproj", "{D3B8CEFF-E48B-44BB-868B-88EE3652C17B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95813540-EBA1-4393-9A08-02BB20CC03B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B8CEFF-E48B-44BB-868B-88EE3652C17B}.Debug|Any CPU.ActiveCfg = Debug
+		{D3B8CEFF-E48B-44BB-868B-88EE3652C17B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
